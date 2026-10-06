@@ -1,0 +1,55 @@
+export const API_ROUTES = {
+  AUTH: {
+    LOGIN: "/admin/auth/login",
+    REFRESH_TOKEN: "/admin/auth/refresh-token",
+    LOGOUT: "/admin/auth/logout",
+  },
+  PROFILE: "/admin/profile",
+  CATEGORIES: {
+    LIST: "/admin/categories",
+    CREATE: "/admin/categories",
+    DETAIL: (id: string) => `/admin/categories/${id}`,
+    UPDATE: (id: string) => `/admin/categories/${id}`,
+    DELETE: (id: string) => `/admin/categories/${id}`,
+  },
+  PRODUCTS: {
+    LIST: "/admin/products",
+    CATALOG: "/admin/products/catalog",
+    CREATE: "/admin/products",
+    DETAIL: (id: string) => `/admin/products/${id}`,
+    UPDATE: (id: string) => `/admin/products/${id}`,
+    DELETE: (id: string) => `/admin/products/${id}`,
+  },
+  ORDERS: {
+    LIST: "/admin/orders",
+    CREATE: "/admin/orders",
+    DETAIL: (id: string) => `/admin/orders/${id}`,
+    UPDATE_STATUS: (id: string) => `/admin/orders/${id}/status`,
+  },
+  USERS: {
+    LIST: "/admin/users",
+    DETAIL: (id: string) => `/admin/users/${id}`,
+    UPDATE_STATUS: (id: string) => `/admin/users/${id}/status`,
+    UPDATE_PRICE_LIST: (id: string) => `/admin/users/${id}/price-list`,
+  },
+  PRICE_LISTS: {
+    LIST: "/admin/price-lists",
+    LEAN: "/admin/price-lists/lean",
+    CREATE: "/admin/price-lists",
+    DETAIL: (id: string) => `/admin/price-lists/${id}`,
+    UPDATE: (id: string) => `/admin/price-lists/${id}`,
+    DELETE: (id: string) => `/admin/price-lists/${id}`,
+    ASSIGN_USERS: (id: string) => `/admin/price-lists/${id}/assign-users`,
+  },
+  UPLOAD: {
+    GET_URLS: "/admin/upload/get-urls",
+    CONFIRM: "/admin/upload/confirm",
+  },
+  SALESMEN: {
+    LIST: "/admin/salesmen",
+    CREATE: "/admin/salesmen",
+    DETAIL: (id: string) => `/admin/salesmen/${id}`,
+    UPDATE: (id: string) => `/admin/salesmen/${id}`,
+    UPDATE_STATUS: (id: string) => `/admin/salesmen/${id}/status`,
+  },
+};

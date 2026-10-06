@@ -1,0 +1,4372 @@
+[
+  {
+    "id": "fresh-vegetables-and-fruits",
+    "name": "Fresh Vegetables and Fruits",
+    "products": [
+      {
+        "id": "onions-25kg",
+        "name": "Onions",
+        "pack": "25kg",
+        "price": 25,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "spanish-onions-25kg",
+        "name": "Spanish Onions",
+        "pack": "25kg",
+        "price": 15,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "indian-onions-3kg",
+        "name": "Indian Onions",
+        "pack": "3kg",
+        "price": 4.5,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "red-onions-10kg",
+        "name": "Red Onions",
+        "pack": "10kg",
+        "price": 9,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "potatoes-white-25kg",
+        "name": "Potatoes white",
+        "pack": "25kg",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "potatoes-red-25kg",
+        "name": "Potatoes Red",
+        "pack": "25kg",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "potatoes-cyprus-25kg",
+        "name": "Potatoes Cyprus",
+        "pack": "25kg",
+        "price": 22,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "baby-potatoes-10kg",
+        "name": "Baby Potatoes",
+        "pack": "10kg",
+        "price": 10,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "garlic-10kg",
+        "name": "Garlic",
+        "pack": "10kg",
+        "price": 20,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "ginger-10-kg",
+        "name": "Ginger",
+        "pack": "10 kg",
+        "price": 16,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "birds-eye-chilli-3kg",
+        "name": "Birds Eye Chilli",
+        "pack": "3kg",
+        "price": 17,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "bullet-chilli-3kg",
+        "name": "Bullet Chilli",
+        "pack": "3kg",
+        "price": 18,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "green-chilli-3kg",
+        "name": "Green Chilli",
+        "pack": "3kg",
+        "price": 16,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "coriander-20-bunches",
+        "name": "Coriander",
+        "pack": "20 bunches",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "dill-leaves-20-bunches",
+        "name": "Dill Leaves",
+        "pack": "20 bunches",
+        "price": 18,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "methi-20-bunches",
+        "name": "Methi",
+        "pack": "20 bunches",
+        "price": 16,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "mint-20-bunches",
+        "name": "Mint",
+        "pack": "20 bunches",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "spinach-20-bunches",
+        "name": "Spinach",
+        "pack": "20 bunches",
+        "price": 10,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "spring-onion-20-bunches",
+        "name": "Spring Onion",
+        "pack": "20 bunches",
+        "price": 9,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "parsley-20-bunches",
+        "name": "Parsley",
+        "pack": "20 bunches",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "dutch-aubergine-5kg",
+        "name": "Dutch Aubergine",
+        "pack": "5kg",
+        "price": 6,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "lemon-100pcs",
+        "name": "Lemon",
+        "pack": "100pcs",
+        "price": 15,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "lime-30pcs",
+        "name": "Lime",
+        "pack": "30pcs",
+        "price": 7,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "red-capsicum-5kg",
+        "name": "Red Capsicum",
+        "pack": "5kg",
+        "price": 8,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "green-capsicum-5kg",
+        "name": "Green Capsicum",
+        "pack": "5kg",
+        "price": 7,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "fresh-coconut-each",
+        "name": "Fresh Coconut",
+        "pack": "each",
+        "price": 1,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "carrots-12kg",
+        "name": "Carrots",
+        "pack": "12kg",
+        "price": 9,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "sweet-potato-10kg",
+        "name": "Sweet Potato",
+        "pack": "10kg",
+        "price": 15,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "courgette-5kg",
+        "name": "Courgette",
+        "pack": "5kg",
+        "price": 9,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "okra-4kg",
+        "name": "Okra",
+        "pack": "4kg",
+        "price": 17,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "pumpkin-8kg",
+        "name": "Pumpkin",
+        "pack": "8kg",
+        "price": 16,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "curry-leaf-1pk",
+        "name": "Curry Leaf",
+        "pack": "1pk",
+        "price": 1.39,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "mooli-10kg",
+        "name": "Mooli",
+        "pack": "10kg",
+        "price": 12,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "bobby-beans-2kg",
+        "name": "Bobby Beans",
+        "pack": "2kg",
+        "price": 9,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "white-cabbage-10kg",
+        "name": "White Cabbage",
+        "pack": "10kg",
+        "price": 9.5,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "red-cabbage-10kg",
+        "name": "Red Cabbage",
+        "pack": "10kg",
+        "price": 9.5,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "lettuce-8pcs",
+        "name": "Lettuce",
+        "pack": "8pcs",
+        "price": 10,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      },
+      {
+        "id": "cucumber-15pcs",
+        "name": "Cucumber",
+        "pack": "15pcs",
+        "price": 9.5,
+        "categoryId": "fresh-vegetables-and-fruits",
+        "categoryName": "Fresh Vegetables and Fruits"
+      }
+    ]
+  },
+  {
+    "id": "oil-and-ghee",
+    "name": "Oil and Ghee",
+    "products": [
+      {
+        "id": "ktc-butter-ghee-2kg",
+        "name": "KTC Butter Ghee",
+        "pack": "2kg",
+        "price": 17.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-butter-ghee-2kg-x-4",
+        "name": "KTC Butter Ghee",
+        "pack": "2kg x 4",
+        "price": 68,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "khanum-butter-ghee-2kg",
+        "name": "Khanum Butter Ghee",
+        "pack": "2kg",
+        "price": 15.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "khanum-butter-ghee-2-kg-x-6",
+        "name": "Khanum Butter Ghee",
+        "pack": "2 kg x 6",
+        "price": 88.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "taj-mahal-veg-ghee-4kg",
+        "name": "Taj Mahal Veg Ghee",
+        "pack": "4kg",
+        "price": 10.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "taj-mahal-veg-ghee-12-5kg",
+        "name": "Taj Mahal Veg Ghee",
+        "pack": "12.5kg",
+        "price": 25.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-sunflower-oil-15lt",
+        "name": "KTC Sunflower Oil",
+        "pack": "15lt",
+        "price": 32.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-sunflower-oil-5lt",
+        "name": "KTC Sunflower Oil",
+        "pack": "5lt",
+        "price": 13.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-vegetable-oil-20lt",
+        "name": "KTC Vegetable Oil",
+        "pack": "20lt",
+        "price": 38.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-rapeseed-oil-20lt",
+        "name": "KTC Rapeseed Oil",
+        "pack": "20lt",
+        "price": 44.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-corn-oil-15lt",
+        "name": "KTC Corn Oil",
+        "pack": "15lt",
+        "price": 42.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-corn-oil-5lt",
+        "name": "KTC Corn Oil",
+        "pack": "5lt",
+        "price": 17.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-mustard-oil-1lt",
+        "name": "KTC Mustard Oil",
+        "pack": "1lt",
+        "price": 4.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-mustard-oil-blended-4l",
+        "name": "KTC Mustard Oil Blended",
+        "pack": "4L",
+        "price": 14.95,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "coconut-cooking-oil-1lt",
+        "name": "Coconut Cooking Oil",
+        "pack": "1lt",
+        "price": 4.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-groundnut-oil-1l",
+        "name": "KTC Groundnut Oil",
+        "pack": "1L",
+        "price": 4.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-groundnut-oil-5lt",
+        "name": "KTC Groundnut Oil",
+        "pack": "5lt",
+        "price": 18.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "romano-extra-virgin-olive-oil-4l",
+        "name": "Romano Extra Virgin Olive Oil",
+        "pack": "4L",
+        "price": 18.49,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "ktc-olive-pomace-blended-5lt",
+        "name": "KTC Olive Pomace Blended",
+        "pack": "5lt",
+        "price": 14.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "indian-mustard-oil-1l",
+        "name": "Indian Mustard Oil",
+        "pack": "1L",
+        "price": 5.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "dairy-products-size",
+        "name": "Dairy Products",
+        "pack": "Size",
+        "price": null,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "natural-yogurt-10kg",
+        "name": "Natural Yogurt",
+        "pack": "10kg",
+        "price": 9.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "onken-1kg-x-6",
+        "name": "Onken",
+        "pack": "1kg X 6",
+        "price": 13.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "dairy-velley-paneer-1kg",
+        "name": "Dairy Velley Paneer",
+        "pack": "1kg",
+        "price": 5.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "continental-paneer-1kg",
+        "name": "Continental Paneer",
+        "pack": "1kg",
+        "price": 5.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "continental-paneer-1kg-x-7",
+        "name": "Continental Paneer",
+        "pack": "1kg x 7",
+        "price": 39.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "double-cream-1lt-x-12",
+        "name": "Double Cream",
+        "pack": "1lt x 12",
+        "price": 19.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "elmea-double-cream-284g",
+        "name": "Elmea Double Cream",
+        "pack": "284g",
+        "price": 1.39,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "elmea-double-cream-284g-x12",
+        "name": "Elmea Double Cream",
+        "pack": "284g x12",
+        "price": 14.99,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      },
+      {
+        "id": "milk-semi-skimed-2lt-x-4",
+        "name": "Milk Semi Skimed",
+        "pack": "2lt x 4",
+        "price": 6.35,
+        "categoryId": "oil-and-ghee",
+        "categoryName": "Oil and Ghee"
+      }
+    ]
+  },
+  {
+    "id": "frozen",
+    "name": "Frozen",
+    "products": [
+      {
+        "id": "begra-chopped-spinach-1kg-x10",
+        "name": "Begra Chopped Spinach",
+        "pack": "1kg x10",
+        "price": 14.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "garden-gold-mixed-ved-900gm-x-12",
+        "name": "Garden gold Mixed Ved",
+        "pack": "900gm x 12",
+        "price": 14.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "manor-farm-garden-peas-907gm-x-12",
+        "name": "Manor Farm Garden Peas",
+        "pack": "907gm x 12",
+        "price": 14.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "garden-gold-sweet-corn-907gm-x-12",
+        "name": "Garden gold Sweet Corn",
+        "pack": "907gm x 12",
+        "price": 19.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "cassva-chunks-1kg-x-6",
+        "name": "Cassva Chunks",
+        "pack": "1kg x 6",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "casava-chips-1kg-x-6",
+        "name": "Casava Chips",
+        "pack": "1kg x 6",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-patra-300gm",
+        "name": "Shana Patra",
+        "pack": "300gm",
+        "price": 1.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-okra-300gm-x-12",
+        "name": "Shana Okra",
+        "pack": "300gm x 12",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-okra-900gm-x-4",
+        "name": "Shana Okra",
+        "pack": "900gm x 4",
+        "price": 17.5,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-methi-300gm",
+        "name": "Shana Methi",
+        "pack": "300gm",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-karela-300gm",
+        "name": "Shana Karela",
+        "pack": "300gm",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "grated-coconut-300gm-x-12",
+        "name": "Grated Coconut",
+        "pack": "300gm x 12",
+        "price": 26.25,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-dudhi-300gm-x-12",
+        "name": "Shana Dudhi",
+        "pack": "300gm x 12",
+        "price": 17.5,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "shana-tinda-300gm-x-12",
+        "name": "Shana Tinda",
+        "pack": "300gm x 12",
+        "price": 17.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "desi-sarson-ka-saag-1kg",
+        "name": "Desi Sarson ka Saag",
+        "pack": "1kg",
+        "price": 4.99,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "tyj-spring-roll-pastry-30s-10",
+        "name": "TYJ Spring Roll Pastry 30s 10\"",
+        "pack": null,
+        "price": 2.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "tyj-spring-roll-pastry-40s-8-5",
+        "name": "TYJ Spring Roll Pastry 40s 8.5\"",
+        "pack": null,
+        "price": 2.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "switz-samosa-leaves-100-100s",
+        "name": "Switz Samosa Leaves 100",
+        "pack": "100s",
+        "price": 3.79,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "minced-garlic-300gm",
+        "name": "Minced Garlic",
+        "pack": "300gm",
+        "price": 1.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      },
+      {
+        "id": "minced-ginger-300gm",
+        "name": "Minced Ginger",
+        "pack": "300gm",
+        "price": 1.49,
+        "categoryId": "frozen",
+        "categoryName": "Frozen"
+      }
+    ]
+  },
+  {
+    "id": "kulfi",
+    "name": "Kulfi",
+    "products": [
+      {
+        "id": "malai-kulfi-sticks-5psc",
+        "name": "Malai Kulfi Sticks",
+        "pack": "5psc",
+        "price": 4.29,
+        "categoryId": "kulfi",
+        "categoryName": "Kulfi"
+      },
+      {
+        "id": "pista-kulfi-sticks-5pcs",
+        "name": "Pista Kulfi Sticks",
+        "pack": "5pcs",
+        "price": 4.29,
+        "categoryId": "kulfi",
+        "categoryName": "Kulfi"
+      },
+      {
+        "id": "rose-kulfi-sticks-5pcs",
+        "name": "Rose Kulfi Sticks",
+        "pack": "5pcs",
+        "price": 4.29,
+        "categoryId": "kulfi",
+        "categoryName": "Kulfi"
+      },
+      {
+        "id": "dairy-valley-malai-kulfi-1",
+        "name": "Dairy Valley Malai Kulfi",
+        "pack": "1",
+        "price": 1.99,
+        "categoryId": "kulfi",
+        "categoryName": "Kulfi"
+      }
+    ]
+  },
+  {
+    "id": "fish-and-sea-food",
+    "name": "Fish & Sea Food",
+    "products": [
+      {
+        "id": "makerel-1kg",
+        "name": "Makerel",
+        "pack": "1kg",
+        "price": null,
+        "categoryId": "fish-and-sea-food",
+        "categoryName": "Fish & Sea Food"
+      },
+      {
+        "id": "peeled-prawns-250gm",
+        "name": "Peeled Prawns",
+        "pack": "250gm",
+        "price": 4.49,
+        "categoryId": "fish-and-sea-food",
+        "categoryName": "Fish & Sea Food"
+      },
+      {
+        "id": "whole-prawns-1kg",
+        "name": "Whole Prawns",
+        "pack": "1kg",
+        "price": 8.99,
+        "categoryId": "fish-and-sea-food",
+        "categoryName": "Fish & Sea Food"
+      },
+      {
+        "id": "pomfret-fillets-1kg",
+        "name": "Pomfret Fillets",
+        "pack": "1kg",
+        "price": 6.99,
+        "categoryId": "fish-and-sea-food",
+        "categoryName": "Fish & Sea Food"
+      },
+      {
+        "id": "tilapia-fillets-1kg",
+        "name": "Tilapia Fillets",
+        "pack": "1kg",
+        "price": 6.99,
+        "categoryId": "fish-and-sea-food",
+        "categoryName": "Fish & Sea Food"
+      }
+    ]
+  },
+  {
+    "id": "frozen-snacks",
+    "name": "Frozen Snacks",
+    "products": [
+      {
+        "id": "crown-chicken-charcoal-seekh-kebab-15pcs",
+        "name": "Crown Chicken Charcoal Seekh  Kebab",
+        "pack": "15pcs",
+        "price": 9.99,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      },
+      {
+        "id": "crown-lamb-charcoal-seekh-kebab-15pcs",
+        "name": "Crown Lamb Charcoal Seekh Kebab",
+        "pack": "15pcs",
+        "price": 9.99,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      },
+      {
+        "id": "humza-chicken-kebab-15pcs",
+        "name": "Humza Chicken Kebab",
+        "pack": "15pcs",
+        "price": 9.99,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      },
+      {
+        "id": "humza-lamb-kebab-15pcs",
+        "name": "Humza Lamb Kebab",
+        "pack": "15pcs",
+        "price": 9.99,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      },
+      {
+        "id": "punjabi-samosas-20",
+        "name": "Punjabi Samosas",
+        "pack": "20",
+        "price": 20,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      },
+      {
+        "id": "haldiram-punjabi-samosas-20s",
+        "name": "Haldiram Punjabi Samosas",
+        "pack": "20s",
+        "price": 10.99,
+        "categoryId": "frozen-snacks",
+        "categoryName": "Frozen Snacks"
+      }
+    ]
+  },
+  {
+    "id": "flours",
+    "name": "Flours",
+    "products": [
+      {
+        "id": "pilsbury-10kg",
+        "name": "Pilsbury",
+        "pack": "10kg",
+        "price": 16.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "aashirwad-10kg",
+        "name": "Aashirwad",
+        "pack": "10kg",
+        "price": 14.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-white-25kg",
+        "name": "Elephant White",
+        "pack": "25kg",
+        "price": 17.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-medium-25kg",
+        "name": "Elephant Medium",
+        "pack": "25kg",
+        "price": 15.79,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-brown-25kg",
+        "name": "Elephant Brown",
+        "pack": "25kg",
+        "price": 19.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-wholemeal-25kg",
+        "name": "Elephant Wholemeal",
+        "pack": "25kg",
+        "price": 22.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-plain-flour-25kg",
+        "name": "Elephant Plain Flour",
+        "pack": "25kg",
+        "price": 18.9,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "elephant-self-raising-25kg",
+        "name": "Elephant Self raising",
+        "pack": "25kg",
+        "price": 18.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "plain-flour-25kg",
+        "name": "Plain Flour",
+        "pack": "25kg",
+        "price": 14.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "self-raising-flour-25kg",
+        "name": "Self Raising Flour",
+        "pack": "25kg",
+        "price": 14.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "naan-flour-25kg",
+        "name": "Naan Flour",
+        "pack": "25kg",
+        "price": 14.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "ktc-gram-flour-besan-2kg-x6",
+        "name": "KTC Gram Flour Besan",
+        "pack": "2kg x6",
+        "price": 13,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "papa-gram-flour-2kg-x6",
+        "name": "Papa Gram Flour",
+        "pack": "2kg x6",
+        "price": 18,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "virani-gram-flour-besan-2kg-x8",
+        "name": "Virani Gram Flour Besan",
+        "pack": "2kg x8",
+        "price": 25.5,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "hansons-gram-flour-5kg",
+        "name": "Hansons Gram Flour",
+        "pack": "5kg",
+        "price": 5.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "gram-flour-25kg-25kg",
+        "name": "Gram Flour 25kg",
+        "pack": "25kg",
+        "price": 28.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "corn-flour-500gm",
+        "name": "Corn Flour",
+        "pack": "500gm",
+        "price": 1.49,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "desi-makki-ka-atta-4kg",
+        "name": "Desi Makki KA Atta",
+        "pack": "4kg",
+        "price": 6.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "rice-flour-5kg",
+        "name": "Rice Flour",
+        "pack": "5kg",
+        "price": 7.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "semolina-coarse-5kg",
+        "name": "Semolina coarse",
+        "pack": "5kg",
+        "price": 8.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "semolina-fine-5kg",
+        "name": "Semolina Fine",
+        "pack": "5kg",
+        "price": 8.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "coconut-flour-20kg-20kg",
+        "name": "Coconut Flour 20kg",
+        "pack": "20kg",
+        "price": 62,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      },
+      {
+        "id": "coconut-milk-powder-1kg",
+        "name": "Coconut Milk Powder",
+        "pack": "1kg",
+        "price": 9.99,
+        "categoryId": "flours",
+        "categoryName": "Flours"
+      }
+    ]
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "products": [
+      {
+        "id": "laila-basmati-rice-20kg",
+        "name": "Laila Basmati Rice",
+        "pack": "20kg",
+        "price": 28.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "tilda-basmati-rice-20kg",
+        "name": "Tilda Basmati Rice",
+        "pack": "20kg",
+        "price": 34.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "tilda-grand-basmati-rice-20kg",
+        "name": "Tilda Grand Basmati Rice",
+        "pack": "20kg",
+        "price": 34.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "daawat-basmati-rice-20kg",
+        "name": "Daawat Basmati Rice",
+        "pack": "20kg",
+        "price": 33.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "trophy-basmati-rice-20kg",
+        "name": "Trophy Basmati Rice",
+        "pack": "20kg",
+        "price": 28.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "hansons-basmati-rice-10kg-x-2",
+        "name": "Hansons Basmati Rice",
+        "pack": "10kg X 2",
+        "price": 29.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "white-pearl-basmati-rice-20kg",
+        "name": "White Pearl Basmati Rice",
+        "pack": "20kg",
+        "price": 33.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "white-pearl-1121-20kg",
+        "name": "White pearl 1121",
+        "pack": "20kg",
+        "price": 29.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      },
+      {
+        "id": "surya-1121-20kg",
+        "name": "Surya 1121",
+        "pack": "20kg",
+        "price": 31.99,
+        "categoryId": "rice",
+        "categoryName": "Rice"
+      }
+    ]
+  },
+  {
+    "id": "spices",
+    "name": "Spices",
+    "products": [
+      {
+        "id": "asafoetida-hing-200gm",
+        "name": "Asafoetida (HING)",
+        "pack": "200gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "ajinamoto-msg-lotus-300gm",
+        "name": "Ajinamoto / MSG lotus",
+        "pack": "300gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "ajwain-1kg",
+        "name": "Ajwain",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "aniseed-star-800g",
+        "name": "Aniseed Star",
+        "pack": "800g",
+        "price": 0.8,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "achaar-masala-1kg",
+        "name": "Achaar Masala",
+        "pack": "1KG",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "bay-leaf-1kg",
+        "name": "Bay Leaf",
+        "pack": "1kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-cardamon-600gm",
+        "name": "Black Cardamon",
+        "pack": "600gm",
+        "price": 0.6,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-cardamon-1kg",
+        "name": "Black Cardamon",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-coarse-1kg",
+        "name": "Black Pepper Coarse",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-coarse-3kg",
+        "name": "Black Pepper Coarse",
+        "pack": "3kg",
+        "price": 3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-fine-1kg",
+        "name": "Black Pepper fine",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-fine-3kg",
+        "name": "Black Pepper fine",
+        "pack": "3kg",
+        "price": 3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-whole-1kg",
+        "name": "Black Pepper whole",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "black-pepper-whole-3kg",
+        "name": "Black Pepper whole",
+        "pack": "3kg",
+        "price": 3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "bolst-s-hot-curry-powder-425gm",
+        "name": "Bolst's Hot Curry Powder",
+        "pack": "425gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "bolst-s-hot-curry-powder-425gm-2",
+        "name": "Bolst's Hot Curry Powder",
+        "pack": "425gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "citric-powder-300gm",
+        "name": "Citric Powder",
+        "pack": "300gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-crushed-1kg",
+        "name": "Chilli Crushed",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-crushed-3kg",
+        "name": "Chilli Crushed",
+        "pack": "3kg",
+        "price": 3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-mild-1kg",
+        "name": "Chilli Powder  Mild",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-mild-4kg",
+        "name": "Chilli Powder  Mild",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-hot-1kg",
+        "name": "Chilli Powder Hot",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-hot-4kg",
+        "name": "Chilli Powder Hot",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-extra-hot-1kg",
+        "name": "Chilli Powder Extra Hot",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-powder-extra-hot-4kg",
+        "name": "Chilli Powder Extra Hot",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-red-whole-long-300gm",
+        "name": "Chilli Red Whole Long",
+        "pack": "300gm",
+        "price": 0.3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chilli-birds-eye-600gm",
+        "name": "Chilli Birds Eye",
+        "pack": "600gm",
+        "price": 0.6,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kashmiri-chilli-whole-100gm",
+        "name": "Kashmiri Chilli Whole",
+        "pack": "100gm",
+        "price": 0.1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kashmiri-chilli-powder-1kg",
+        "name": "Kashmiri Chilli Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kashmiri-chilli-powder-4kg",
+        "name": "Kashmiri Chilli Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "deggi-mirch-1kg",
+        "name": "Deggi Mirch",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "deggi-mirch-4kg",
+        "name": "Deggi Mirch",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cinnamon-powder-1kg",
+        "name": "Cinnamon Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cinnamon-sticks-400gm",
+        "name": "Cinnamon Sticks",
+        "pack": "400gm",
+        "price": 0.4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cinnamon-sticks-2kg",
+        "name": "Cinnamon Sticks",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cloves-powder-50gm",
+        "name": "Cloves Powder",
+        "pack": "50gm",
+        "price": 0.05,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cloves-whole-500gm",
+        "name": "Cloves Whole",
+        "pack": "500gm",
+        "price": 0.5,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-cumin-blend-1kg",
+        "name": "Coriander Cumin Blend",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-cumin-blend-4kg",
+        "name": "Coriander Cumin Blend",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-powder-1kg",
+        "name": "Coriander Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-powder-4kg",
+        "name": "Coriander Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-whole-800gm",
+        "name": "Coriander Whole",
+        "pack": "800gm",
+        "price": 0.8,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "coriander-whole-2kg",
+        "name": "Coriander Whole",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cumin-jeera-powder-1kg",
+        "name": "Cumin (Jeera) Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cumin-jeera-powder-4kg",
+        "name": "Cumin (Jeera) Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cumin-whole-1kg",
+        "name": "Cumin Whole",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "cumin-whole-4kg",
+        "name": "Cumin Whole",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "shahi-jeera-100gm",
+        "name": "Shahi Jeera",
+        "pack": "100gm",
+        "price": 0.1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kala-jeera-100gm",
+        "name": "Kala jeera",
+        "pack": "100gm",
+        "price": 0.1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "curry-powder-hot-1kg",
+        "name": "Curry Powder Hot",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "curry-powder-hot-4kg",
+        "name": "Curry Powder Hot",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "curry-powder-mild-1kg",
+        "name": "Curry Powder Mild",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "curry-powder-mild-4kg",
+        "name": "Curry Powder Mild",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "chinese-five-spice-300gm",
+        "name": "Chinese five spice",
+        "pack": "300gm",
+        "price": 0.3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "curry-leaf-400gm",
+        "name": "Curry Leaf",
+        "pack": "400gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "fennel-seeds-1kg",
+        "name": "Fennel seeds",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "fenugreek-methi-powder-1kg",
+        "name": "Fenugreek  (methi) Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "fenugreek-methi-seeds-2kg",
+        "name": "Fenugreek  (methi) seeds",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mixed-whole-masala-1kg",
+        "name": "Mixed Whole Masala",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mixed-whole-masala-3kg",
+        "name": "Mixed Whole Masala",
+        "pack": "3kg",
+        "price": 3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "garam-masala-powder-1kg",
+        "name": "Garam Masala Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "garam-masala-powder-4kg",
+        "name": "Garam Masala Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "garlic-flakes-200gm",
+        "name": "Garlic Flakes",
+        "pack": "200gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "garlic-powder-1kg",
+        "name": "Garlic Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "garlic-powder-4kg",
+        "name": "Garlic Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "ginger-whole-300gm",
+        "name": "Ginger Whole",
+        "pack": "300gm",
+        "price": 0.3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "ginger-powder-1kg",
+        "name": "Ginger Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "ginger-powder-4kg",
+        "name": "Ginger Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "green-cardamom-powder-100gm",
+        "name": "Green Cardamom Powder",
+        "pack": "100gm",
+        "price": 0.1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "green-cardamom-500gm",
+        "name": "Green Cardamom",
+        "pack": "500gm",
+        "price": 0.5,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "green-cardamom-1kg",
+        "name": "Green Cardamom",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "javantri-mace-powder-100gm",
+        "name": "Javantri mace Powder",
+        "pack": "100gm",
+        "price": 0.1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "javantri-mace-whole-35gm",
+        "name": "Javantri mace whole",
+        "pack": "35gm",
+        "price": 0.035,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kalonji-seeds-black-seeds-1kg",
+        "name": "Kalonji Seeds (Black Seeds)",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "hansons-kasuri-methi-1kg",
+        "name": "Hansons Kasuri Methi",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mdh-kasuri-methi-100gm",
+        "name": "MDH Kasuri Methi",
+        "pack": "100gm",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mdh-kasuri-methi-1kg",
+        "name": "MDH Kasuri Methi",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mustard-seeds-brown-2kg",
+        "name": "Mustard seeds brown",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "mustard-seeds-yellow-2kg",
+        "name": "Mustard seeds yellow",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "nutmeg-whole-50gm",
+        "name": "Nutmeg Whole",
+        "pack": "50gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "nutmeg-powder-50gm",
+        "name": "Nutmeg Powder",
+        "pack": "50gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "panchpooran-2kg",
+        "name": "Panchpooran",
+        "pack": "2kg",
+        "price": 2,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "paprika-powder-1kg",
+        "name": "Paprika Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "paprika-powder-4kg",
+        "name": "Paprika Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "poppy-seeds-1kg",
+        "name": "Poppy seeds",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "saffron-4gm",
+        "name": "Saffron",
+        "pack": "4gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "sesame-seeds-black-1kg",
+        "name": "Sesame seeds black",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "sesame-seeds-natural-1kg",
+        "name": "Sesame seeds natural",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "sesame-seeds-washed-1kg",
+        "name": "Sesame seeds washed",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "tandoori-masala-1kg",
+        "name": "Tandoori Masala",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "tandoori-masala-4kg",
+        "name": "Tandoori Masala",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "tukmaria-300gm",
+        "name": "Tukmaria",
+        "pack": "300gm",
+        "price": 0.3,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "turmeric-haldi-powder-1kg",
+        "name": "Turmeric ( Haldi) Powder",
+        "pack": "1kg",
+        "price": 1,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "turmeric-haldi-powder-4kg",
+        "name": "Turmeric ( Haldi) Powder",
+        "pack": "4kg",
+        "price": 4,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "dagarful-100gm",
+        "name": "Dagarful",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "salt-12-5kg",
+        "name": "Salt",
+        "pack": "12.5kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "salt-3kg",
+        "name": "Salt",
+        "pack": "3kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "himalyan-salt-1kg",
+        "name": "Himalyan Salt",
+        "pack": "1kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "kala-namak-500gm",
+        "name": "Kala Namak",
+        "pack": "500gm",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "damerera-sugar-5kg",
+        "name": "Damerera Sugar",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "granulated-sugar-25kg",
+        "name": "Granulated Sugar",
+        "pack": "25kg",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "granulated-sugar-1kg-x15",
+        "name": "Granulated Sugar",
+        "pack": "1kg x15",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      },
+      {
+        "id": "granulated-sugar-size",
+        "name": "Granulated Sugar",
+        "pack": "SIZE",
+        "price": null,
+        "categoryId": "spices",
+        "categoryName": "Spices"
+      }
+    ]
+  },
+  {
+    "id": "shan-masala",
+    "name": "Shan Masala",
+    "products": [
+      {
+        "id": "biryani-masala-mix-50gm",
+        "name": "Biryani Masala Mix",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "bombay-biryani-spec-60gm",
+        "name": "Bombay  Biryani spec.",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chicken-biryani-malay-60gm",
+        "name": "Chicken Biryani (Malay)",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "fish-biryani-50gm",
+        "name": "Fish Biryani",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "mutton-biryani-memoni-60gm",
+        "name": "Mutton Biryani (Memoni)",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "pilau-biryani-50gm",
+        "name": "Pilau Biryani",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "punjabi-yakhni-pilau-50gm",
+        "name": "Punjabi Yakhni Pilau",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "sindhi-biryani-60gm",
+        "name": "Sindhi Biryani",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "achar-gosht-curry-50gm",
+        "name": "Achar Gosht Curry",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "butter-chicken-50gm",
+        "name": "Butter Chicken",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chicken-handi-50gm",
+        "name": "Chicken Handi",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chicken-jalfrezi-50gm",
+        "name": "Chicken Jalfrezi",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chicken-masala-50gm",
+        "name": "Chicken Masala",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chicken-white-korma-40gm",
+        "name": "Chicken White Korma",
+        "pack": "40gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "kofta-curry-50gm",
+        "name": "Kofta Curry",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "korma-50gm",
+        "name": "Korma",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "meat-masala-50gm",
+        "name": "Meat Masala",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "murgh-cholay-50gm",
+        "name": "Murgh Cholay",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "fish-fried-masala-50gm",
+        "name": "Fish Fried Masala",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "fried-chops-steaks-50gm",
+        "name": "Fried Chops/Steaks",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "nihari-60gm",
+        "name": "Nihari",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "pakora-bhajia-mix-150gm",
+        "name": "Pakora/Bhajia Mix",
+        "pack": "150gm",
+        "price": null,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "paya-curry-50gm",
+        "name": "Paya Curry",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "shami-kebab-50gm",
+        "name": "Shami Kebab",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "tandoori-chick-bbq-50gm",
+        "name": "Tandoori Chick BBQ",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "tikka-bbq-50gm",
+        "name": "Tikka BBQ",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "tikka-seekh-keb-bbq-50gm",
+        "name": "Tikka Seekh Keb BBQ",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "karahi-masala-50gm",
+        "name": "Karahi Masala",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "keema-50gm",
+        "name": "Keema",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chana-chat-60gm",
+        "name": "Chana Chat",
+        "pack": "60gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "chat-masala-100gm",
+        "name": "Chat Masala",
+        "pack": "100gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "fruit-chaat-50gm",
+        "name": "Fruit Chaat",
+        "pack": "50gm",
+        "price": 9.99,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "easy-cook-haleem-mix-300gm",
+        "name": "Easy Cook Haleem Mix",
+        "pack": "300gm",
+        "price": null,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "shahi-haleem-mix-300gm",
+        "name": "Shahi Haleem Mix",
+        "pack": "300gm",
+        "price": null,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      },
+      {
+        "id": "shahi-haleem-mix-size",
+        "name": "Shahi Haleem Mix",
+        "pack": "SIZE",
+        "price": null,
+        "categoryId": "shan-masala",
+        "categoryName": "Shan Masala"
+      }
+    ]
+  },
+  {
+    "id": "mdh",
+    "name": "MDH",
+    "products": [
+      {
+        "id": "mdh-amchur-powder-100gm",
+        "name": "MDH Amchur Powder",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-anardana-powder-100gm",
+        "name": "MDH Anardana Powder",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-bombay-biryani-100gm",
+        "name": "MDH Bombay Biryani",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-butter-chicken-100gm",
+        "name": "MDH Butter Chicken",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-chana-dal-masala-100gm",
+        "name": "MDH Chana Dal Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-chana-masala-100gm",
+        "name": "MDH Chana Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-chicken-curry-100gm",
+        "name": "MDH Chicken Curry",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-chunky-chat-100gm",
+        "name": "MDH Chunky Chat",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-dahi-vada-raita-100gm",
+        "name": "MDH Dahi Vada Raita",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-dal-makhani-masala-100gm",
+        "name": "MDH Dal Makhani Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-deggi-mirch-100gm",
+        "name": "MDH Deggi Mirch",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-deggi-mirch-500gm",
+        "name": "MDH Deggi Mirch",
+        "pack": "500gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-garam-masala-100gm",
+        "name": "MDH Garam Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-karahi-chicken-100gm",
+        "name": "MDH Karahi Chicken",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-kashmiri-chilli-powder-100gm",
+        "name": "MDH Kashmiri Chilli Powder",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-kasuri-methi-100gm-2",
+        "name": "MDH Kasuri Methi",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-kitchen-king-100gm",
+        "name": "MDH Kitchen King",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-meat-curry-100gm",
+        "name": "MDH Meat Curry",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-pakora-masala-100gm",
+        "name": "MDH Pakora Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-pani-puri-masala-100gm",
+        "name": "MDH Pani Puri Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-sambhar-masala-100gm",
+        "name": "MDH Sambhar Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-shahi-paneer-masala-100gm",
+        "name": "MDH Shahi Paneer Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-sindhi-biryani-masala-100gm",
+        "name": "MDH Sindhi Biryani Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-t-plus-tea-masala-35gm",
+        "name": "MDH T Plus Tea Masala",
+        "pack": "35gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mdh-tandoori-bbq-100gm",
+        "name": "MDH Tandoori BBQ",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-size",
+        "name": "Laziza",
+        "pack": "SIZE",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-biryani-masala-mix-100gm",
+        "name": "LAZIZA Biryani Masala Mix",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-bombay-biryani-spec-100gm",
+        "name": "LAZIZA Bombay  Biryani spec.*",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-sindhi-biryani-130gm",
+        "name": "LAZIZA Sindhi Biryani",
+        "pack": "130gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-yakhni-pulao-100gm",
+        "name": "LAZIZA Yakhni Pulao",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-chicken-masala-100gm",
+        "name": "LAZIZA Chicken Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-keema-curry-100gm",
+        "name": "LAZIZA Keema Curry",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-korma-curry-100gm",
+        "name": "LAZIZA Korma Curry",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-chapli-kebab-masala-100gm",
+        "name": "LAZIZA Chapli Kebab Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-fish-masala-100gm",
+        "name": "LAZIZA Fish Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-haleem-masala-100gm",
+        "name": "LAZIZA Haleem Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-nehari-masala-100gm",
+        "name": "LAZIZA Nehari Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-paya-masala-100gm",
+        "name": "LAZIZA Paya Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-seekh-kebab-masala-100gm",
+        "name": "LAZIZA Seekh Kebab Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-shami-kebab-100gm",
+        "name": "LAZIZA Shami Kebab",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-tandoori-bbq-masala-100gm",
+        "name": "LAZIZA Tandoori BBQ Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-chana-masala-100gm",
+        "name": "LAZIZA Chana Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-chaat-masala-100gm",
+        "name": "LAZIZA Chaat Masala",
+        "pack": "100gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "laziza-haleem-mix-complete-375gm",
+        "name": "LAZIZA Haleem Mix (Complete)",
+        "pack": "375gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "century-size",
+        "name": "Century",
+        "pack": "SIZE",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "momo-masala-100gm-x-10",
+        "name": "Momo Masala",
+        "pack": "100gm x 10",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "meat-masala-100gm-x-10",
+        "name": "Meat masala",
+        "pack": "100gm x 10",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "chicken-masala-100gm-x-10",
+        "name": "Chicken Masala",
+        "pack": "100gm x 10",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "beans-and-lentils-size",
+        "name": "Beans & Lentils",
+        "pack": "SIZE",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "beans-and-lentils-2kg",
+        "name": "Beans & Lentils",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "beans-and-lentils-5kg",
+        "name": "Beans & Lentils",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "butter-beans-1kg",
+        "name": "Butter beans",
+        "pack": "1kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "butter-beans-5kg",
+        "name": "Butter beans",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "chana-daal-2kg",
+        "name": "Chana daal",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "chana-daal-5kg",
+        "name": "Chana daal",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "chick-peas-2kg",
+        "name": "Chick peas",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "chick-peas-5kg",
+        "name": "Chick peas",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "daria-daal-600gm",
+        "name": "Daria Daal",
+        "pack": "600gm",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "daria-daal-3kg",
+        "name": "Daria Daal",
+        "pack": "3kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "masoor-whole-2kg",
+        "name": "Masoor whole",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "masoor-whole-5kg",
+        "name": "Masoor whole",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-split-2kg",
+        "name": "Moong Split",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-split-5kg",
+        "name": "Moong Split",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-washed-2kg",
+        "name": "Moong washed",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-washed-5kg",
+        "name": "Moong washed",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-whole-2kg",
+        "name": "Moong whole",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moong-whole-5kg",
+        "name": "Moong whole",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moth-beans-2kg",
+        "name": "Moth Beans",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "moth-beans-5kg",
+        "name": "Moth Beans",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "red-kidney-beans-2kg",
+        "name": "Red kidney Beans",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "red-kidney-beans-5kg",
+        "name": "Red kidney Beans",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "red-split-lentils-uk-2kg",
+        "name": "Red Split lentils UK",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "red-split-lentils-uk-5kg",
+        "name": "Red Split lentils UK",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "rose-coco-beans-2kg",
+        "name": "Rose coco beans",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "rose-coco-beans-5kg",
+        "name": "Rose coco beans",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "toor-daal-dry-2kg",
+        "name": "Toor daal( dry )",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "toor-daal-dry-5kg",
+        "name": "Toor daal( dry )",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "toor-daal-oily-2kg",
+        "name": "Toor daal( oily )",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "toor-daal-oily-5kg",
+        "name": "Toor daal( oily )",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-split-2kg",
+        "name": "Urid Split",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-split-5kg",
+        "name": "Urid Split",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-washed-2kg",
+        "name": "Urid washed",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-washed-5kg",
+        "name": "Urid washed",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-whole-2kg",
+        "name": "Urid whole",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "urid-whole-5kg",
+        "name": "Urid whole",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "white-kidney-beans-2kg",
+        "name": "White kidney beans",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "white-kidney-beans-5kg",
+        "name": "White kidney beans",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "kala-chana-2kg",
+        "name": "Kala chana",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "kala-chana-5kg",
+        "name": "Kala chana",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "yellow-split-peas-2kg",
+        "name": "Yellow split peas",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "yellow-split-peas-5kg",
+        "name": "Yellow split peas",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "yellow-whole-peas-2kg",
+        "name": "Yellow whole peas",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "yellow-whole-peas-5kg",
+        "name": "Yellow whole peas",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "green-peas-whole-2kg",
+        "name": "Green Peas whole",
+        "pack": "2kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "green-peas-whole-5kg",
+        "name": "Green Peas whole",
+        "pack": "5kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "mix-lentils-5-kg",
+        "name": "Mix Lentils",
+        "pack": "5 kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "soya-bean-5-kg",
+        "name": "Soya Bean",
+        "pack": "5 kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "soya-chunks-1-5-kg",
+        "name": "Soya Chunks",
+        "pack": "1.5 kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      },
+      {
+        "id": "soya-mince-1-5-kg",
+        "name": "Soya Mince",
+        "pack": "1.5 kg",
+        "price": null,
+        "categoryId": "mdh",
+        "categoryName": "MDH"
+      }
+    ]
+  },
+  {
+    "id": "cardomons-and-nuts",
+    "name": "Cardomons and Nuts",
+    "products": [
+      {
+        "id": "almonds-1kg",
+        "name": "Almonds",
+        "pack": "1kg",
+        "price": 8.489090909090908,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "almonds-3kg",
+        "name": "Almonds",
+        "pack": "3kg",
+        "price": 25.467272727272725,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "almonds-flaked-1kg",
+        "name": "Almonds Flaked",
+        "pack": "1kg",
+        "price": 8.12,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "almonds-ground-1kg",
+        "name": "Almonds Ground",
+        "pack": "1kg",
+        "price": 8.540000000000001,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "cashew-nuts-1kg",
+        "name": "Cashew Nuts",
+        "pack": "1kg",
+        "price": 8.870909090909091,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "cashew-nuts-3kg",
+        "name": "Cashew Nuts",
+        "pack": "3kg",
+        "price": 26.612727272727273,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "cashew-nuts-splits-1k",
+        "name": "Cashew Nuts Splits",
+        "pack": "1k",
+        "price": 8.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "cashew-nuts-roasted-and-salted-1kg",
+        "name": "Cashew Nuts Roasted & Salted",
+        "pack": "1kg",
+        "price": 9.507272727272726,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "cashew-nuts-spicy-1kg",
+        "name": "Cashew Nuts Spicy",
+        "pack": "1kg",
+        "price": 9.507272727272726,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "charmagz-melon-seeds-1kg",
+        "name": "Charmagz Melon seeds",
+        "pack": "1kg",
+        "price": 3.976,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "dry-dates-1-5kg",
+        "name": "Dry Dates",
+        "pack": "1.5kg",
+        "price": 2.9099999999999997,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "figs-250gm",
+        "name": "Figs",
+        "pack": "250gm",
+        "price": 4.199999999999999,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "golden-sultana-1kg",
+        "name": "Golden Sultana",
+        "pack": "1kg",
+        "price": 3.976,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-cardamom-500gm-2",
+        "name": "Green Cardamom",
+        "pack": "500gm",
+        "price": 14.549999999999999,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-cardamom-1kg-2",
+        "name": "Green Cardamom",
+        "pack": "1kg",
+        "price": 27.159999999999997,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-cardamom-seeds-600gm",
+        "name": "Green Cardamom Seeds",
+        "pack": "600gm",
+        "price": 0,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-cardamom-seeds-1kg",
+        "name": "Green Cardamom Seeds",
+        "pack": "1kg",
+        "price": 0,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-cardamom-powder-200gm",
+        "name": "Green Cardamom Powder",
+        "pack": "200gm",
+        "price": 9.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "green-sultana-1kg",
+        "name": "Green Sultana",
+        "pack": "1kg",
+        "price": 6.16,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "prunes-300gm",
+        "name": "Prunes",
+        "pack": "300gm",
+        "price": 0,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "black-raisins-300gm",
+        "name": "Black Raisins",
+        "pack": "300gm",
+        "price": 2.044,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "peanut-pink-1-5kg",
+        "name": "Peanut Pink",
+        "pack": "1.5kg",
+        "price": 4.4799999999999995,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "peanut-red-1-5kg",
+        "name": "Peanut red",
+        "pack": "1.5kg",
+        "price": 4.4799999999999995,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "peanuts-blanched",
+        "name": "Peanuts Blanched",
+        "pack": null,
+        "price": 4.4799999999999995,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "pumpkin-seeds-1kg",
+        "name": "Pumpkin seeds",
+        "pack": "1kg",
+        "price": 5.488,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "walnuts-1kg",
+        "name": "Walnuts",
+        "pack": "1kg",
+        "price": 9.799999999999999,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "dried-pineapple-pieces-200gm",
+        "name": "Dried Pineapple Pieces",
+        "pack": "200gm",
+        "price": 2.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "dried-papaya-pieces-200gm",
+        "name": "Dried Papaya Pieces",
+        "pack": "200gm",
+        "price": 2.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "dried-mango-pieces-200gm",
+        "name": "Dried Mango Pieces",
+        "pack": "200gm",
+        "price": 2.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "desicated-coconut-medium-1kg",
+        "name": "Desicated Coconut Medium",
+        "pack": "1kg",
+        "price": 4.928,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "desicated-coconut-medium-3kg",
+        "name": "Desicated Coconut Medium",
+        "pack": "3kg",
+        "price": 15.660480000000002,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "desicated-coconut-medium-20kg",
+        "name": "Desicated Coconut Medium",
+        "pack": "20kg",
+        "price": 99.6,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "mukhwas-pan-pasand-1kg",
+        "name": "Mukhwas pan Pasand",
+        "pack": "1kg",
+        "price": 6.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "mukhwas-green-1kg",
+        "name": "Mukhwas green",
+        "pack": "1kg",
+        "price": 6.99,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      },
+      {
+        "id": "sugar-coated-fennel-seeds-1kg",
+        "name": "Sugar Coated Fennel seeds",
+        "pack": "1kg",
+        "price": 6.134545454545454,
+        "categoryId": "cardomons-and-nuts",
+        "categoryName": "Cardomons and Nuts"
+      }
+    ]
+  },
+  {
+    "id": "paste-pickle-and-sauces",
+    "name": "Paste Pickle And Sauces",
+    "products": [
+      {
+        "id": "patak-mango-pickle-mild-2-3kg",
+        "name": "Patak Mango Pickle Mild",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-lime-pickle-mild-2-3kg",
+        "name": "Patak Lime Pickle Mild",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-lime-pickle-hot-2-3kg",
+        "name": "Patak lime Pickle Hot",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "ahmed-mango-1-kg",
+        "name": "Ahmed Mango",
+        "pack": "1 kg",
+        "price": 3.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "ahmed-mixed-1-kg",
+        "name": "Ahmed Mixed",
+        "pack": "1 kg",
+        "price": 3.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "pachranga-mixed-800gm",
+        "name": "Pachranga Mixed",
+        "pack": "800gm",
+        "price": 2.29,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "sapna-ginger-paste-1kg",
+        "name": "Sapna Ginger Paste",
+        "pack": "1kg",
+        "price": 2.79,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "sapna-garlic-paste-1kg",
+        "name": "Sapna Garlic Paste",
+        "pack": "1kg",
+        "price": 2.79,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "sapna-ginger-garlic-paste-1kg",
+        "name": "Sapna Ginger Garlic Paste",
+        "pack": "1kg",
+        "price": 2.79,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "sapna-papaya-paste-1kg",
+        "name": "Sapna Papaya Paste",
+        "pack": "1kg",
+        "price": 2.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-balti-curry-paste-2-3kg",
+        "name": "Patak Balti (curry paste)",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-mild-curry-paste-2-3kg",
+        "name": "Patak  Mild Curry Paste",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-sweet-mango-chuney-2-3kg",
+        "name": "Patak Sweet mango chuney",
+        "pack": "2.3kg",
+        "price": 13.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-kashmiri-curry-paste-2-2kg",
+        "name": "Patak Kashmiri (curry paste)",
+        "pack": "2.2kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-madras-kebab-curry-paste-2-4kg",
+        "name": "Patak Madras kebab (curry paste)",
+        "pack": "2.4kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-rogan-josh-curry-paste-2-3kg",
+        "name": "Patak Rogan josh (curry paste)",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-sweet-mango-chutney-2-9-kg",
+        "name": "Patak Sweet Mango Chutney",
+        "pack": "2.9 kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-tandoori-marinade-paste-2-5kg",
+        "name": "Patak Tandoori (Marinade Paste)",
+        "pack": "2.5kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-tikka-masala-curry-paste-2-3kg",
+        "name": "Patak Tikka masala (curry paste)",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "patak-vindaloo-curry-paste-2-3kg",
+        "name": "Patak Vindaloo (curry paste)",
+        "pack": "2.3kg",
+        "price": 11.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "tomato-ketchup-4-5kg",
+        "name": "Tomato Ketchup",
+        "pack": "4.5kg",
+        "price": 4.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "chilli-sauce-2-34kg",
+        "name": "Chilli Sauce",
+        "pack": "2.34kg",
+        "price": 5.25,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "mint-sauce-2-34kg",
+        "name": "Mint Sauce",
+        "pack": "2.34kg",
+        "price": 4.29,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "soy-sauce-light-150ml",
+        "name": "Soy Sauce Light",
+        "pack": "150ml",
+        "price": 1.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "soy-sauce-dark-150ml",
+        "name": "Soy Sauce Dark",
+        "pack": "150ml",
+        "price": 1.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "fish-sauce-725ml",
+        "name": "Fish Sauce",
+        "pack": "725ml",
+        "price": 2.49,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "sweet-chilli-sauce-725ml",
+        "name": "Sweet Chilli Sauce",
+        "pack": "725ml",
+        "price": 2.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "mango-chutney-3kg",
+        "name": "Mango chutney 3kg",
+        "pack": null,
+        "price": 7.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "mango-chutne-40lt",
+        "name": "Mango chutne 40lt",
+        "pack": null,
+        "price": 55,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "plain-pappadoms-20s",
+        "name": "Plain Pappadoms",
+        "pack": "20s",
+        "price": 17.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "plain-pappadoms-80s",
+        "name": "Plain Pappadoms",
+        "pack": "80s",
+        "price": 69.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "plain-pappadoms-20s-2",
+        "name": "Plain Pappadoms",
+        "pack": "20s",
+        "price": 17.99,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      },
+      {
+        "id": "plain-pappadoms-60s",
+        "name": "Plain Pappadoms",
+        "pack": "60s",
+        "price": 52,
+        "categoryId": "paste-pickle-and-sauces",
+        "categoryName": "Paste Pickle And Sauces"
+      }
+    ]
+  },
+  {
+    "id": "tin-food",
+    "name": "TIN Food",
+    "products": [
+      {
+        "id": "ktc-plum-tomatoes-2-55kg-x-6",
+        "name": "KTC Plum Tomatoes",
+        "pack": "2.55kg x 6",
+        "price": 14.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-chopped-tomatoes-2-55kg-x-6",
+        "name": "KTC Chopped Tomatoes",
+        "pack": "2.55kg x 6",
+        "price": 14.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-tomato-paste-4-5kg",
+        "name": "KTC Tomato Paste",
+        "pack": "4.5kg",
+        "price": 8.39,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "tomato-paste-white-tower-4kg",
+        "name": "Tomato Paste White Tower",
+        "pack": "4kg",
+        "price": null,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-chick-peas-2-55kg-x-6",
+        "name": "KTC Chick peas",
+        "pack": "2.55kg x 6",
+        "price": 17.49,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-spinach-leaf-765gm-x-12",
+        "name": "KTC Spinach Leaf",
+        "pack": "765gm x 12",
+        "price": 16.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-spinach-puree-765gm-x-12",
+        "name": "KTC Spinach Puree",
+        "pack": "765gm x 12",
+        "price": 14.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-sarson-ka-saag-800gm-x-12",
+        "name": "KTC Sarson Ka Saag",
+        "pack": "800gm x 12",
+        "price": 14.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-kala-chana-400gm-x-12",
+        "name": "KTC Kala Chana",
+        "pack": "400gm x 12",
+        "price": 5.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-alphanso-mango-pulp-850gm-x-6",
+        "name": "KTC Alphanso Mango Pulp",
+        "pack": "850gm x 6",
+        "price": 10.5,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-kesar-mango-pulp-850gm-x-6",
+        "name": "KTC Kesar Mango Pulp",
+        "pack": "850gm x 6",
+        "price": 10.5,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "sea-isle-coconut-milk-400ml-x-12",
+        "name": "SEA ISLE Coconut Milk",
+        "pack": "400ml x 12",
+        "price": 9.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "ktc-pure-creamed-coconut-200gm-x-10",
+        "name": "KTC Pure Creamed Coconut",
+        "pack": "200gm x 10",
+        "price": 9.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "del-monte-pineapple-chunks-300gm",
+        "name": "Del Monte Pineapple chunks",
+        "pack": "300gm",
+        "price": 1.49,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "desi-treat-soya-chops-800gm",
+        "name": "Desi Treat Soya Chops",
+        "pack": "800gm",
+        "price": 4.49,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "condiments-weight",
+        "name": "Condiments",
+        "pack": "Weight",
+        "price": null,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "rose-water-450ml",
+        "name": "Rose water",
+        "pack": "450ml",
+        "price": 1.29,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "rose-water-450ml-x-12",
+        "name": "Rose water",
+        "pack": "450ml x 12",
+        "price": 11.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "kewda-water-190ml-190ml",
+        "name": "Kewda Water 190ml",
+        "pack": "190ml",
+        "price": 0.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "kewda-water-190ml-190ml-x-12",
+        "name": "Kewda Water 190ml",
+        "pack": "190ml x 12",
+        "price": 9.79,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "bread-crumbs-1kg",
+        "name": "Bread Crumbs",
+        "pack": "1kg",
+        "price": 4.49,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "bread-crumbs-4kg",
+        "name": "Bread Crumbs",
+        "pack": "4kg",
+        "price": 11.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "red-food-colour-400gm",
+        "name": "Red Food Colour",
+        "pack": "400gm",
+        "price": 3.29,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "green-food-colour-400gm",
+        "name": "Green Food Colour",
+        "pack": "400gm",
+        "price": 3.49,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "orange-food-colour-400gm",
+        "name": "Orange Food Colour",
+        "pack": "400gm",
+        "price": 3.69,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "yellow-food-colour-400gm",
+        "name": "yellow Food Colour",
+        "pack": "400gm",
+        "price": 2.79,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "tamarind-slabs-250g-x-20",
+        "name": "Tamarind slabs",
+        "pack": "250g x 20",
+        "price": 0.89,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "tamarind-soft-seedless-500gm",
+        "name": "Tamarind Soft Seedless",
+        "pack": "500gm",
+        "price": 1.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "top-op-tamarind-paste-1kg",
+        "name": "top op Tamarind Paste",
+        "pack": "1kg",
+        "price": 5.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "tamarind-paste-427g",
+        "name": "Tamarind Paste",
+        "pack": "427g",
+        "price": 2.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      },
+      {
+        "id": "tamarind-powder-100gm",
+        "name": "Tamarind Powder",
+        "pack": "100gm",
+        "price": 1.99,
+        "categoryId": "tin-food",
+        "categoryName": "TIN Food"
+      }
+    ]
+  },
+  {
+    "id": "pg-tips-240s",
+    "name": "Pg Tips 240s",
+    "products": [
+      {
+        "id": "red-label-1kg",
+        "name": "Red Label 1kg",
+        "pack": null,
+        "price": 9.99,
+        "categoryId": "pg-tips-240s",
+        "categoryName": "Pg Tips 240s"
+      },
+      {
+        "id": "taj-mahal-900g",
+        "name": "Taj Mahal 900g",
+        "pack": null,
+        "price": 9.99,
+        "categoryId": "pg-tips-240s",
+        "categoryName": "Pg Tips 240s"
+      },
+      {
+        "id": "wagh-bakri-1kg",
+        "name": "Wagh Bakri 1kg",
+        "pack": null,
+        "price": 8.99,
+        "categoryId": "pg-tips-240s",
+        "categoryName": "Pg Tips 240s"
+      },
+      {
+        "id": "wagh-bakri-masala-tea-bags",
+        "name": "Wagh Bakri Masala Tea Bags",
+        "pack": null,
+        "price": 3.99,
+        "categoryId": "pg-tips-240s",
+        "categoryName": "Pg Tips 240s"
+      },
+      {
+        "id": "fried-onions-2-5kg",
+        "name": "Fried Onions",
+        "pack": "2.5kg",
+        "price": null,
+        "categoryId": "pg-tips-240s",
+        "categoryName": "Pg Tips 240s"
+      }
+    ]
+  },
+  {
+    "id": "dried-onions",
+    "name": "Dried Onions",
+    "products": [
+      {
+        "id": "lemon-juice-1lt",
+        "name": "Lemon Juice",
+        "pack": "1lt",
+        "price": 1.99,
+        "categoryId": "dried-onions",
+        "categoryName": "Dried Onions"
+      },
+      {
+        "id": "lemon-juice-1lt-x-6",
+        "name": "Lemon Juice",
+        "pack": "1lt x 6",
+        "price": null,
+        "categoryId": "dried-onions",
+        "categoryName": "Dried Onions"
+      },
+      {
+        "id": "jagery-gur-1kg",
+        "name": "Jagery Gur",
+        "pack": "1kg",
+        "price": 2.99,
+        "categoryId": "dried-onions",
+        "categoryName": "Dried Onions"
+      },
+      {
+        "id": "jagery-shakar-1kg",
+        "name": "Jagery Shakar",
+        "pack": "1kg",
+        "price": 3.89,
+        "categoryId": "dried-onions",
+        "categoryName": "Dried Onions"
+      },
+      {
+        "id": "jagery-pesi-gur-1kg",
+        "name": "Jagery Pesi Gur",
+        "pack": "1kg",
+        "price": 3.89,
+        "categoryId": "dried-onions",
+        "categoryName": "Dried Onions"
+      }
+    ]
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging",
+    "products": [
+      {
+        "id": "foil-containers-no-2a-with-lids",
+        "name": "Foil Containers",
+        "pack": "No 2A with Lids",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "foil-containers-no-6a-with-lids",
+        "name": "Foil Containers",
+        "pack": "No 6A with Lids",
+        "price": 500,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "plastic-containers-500ml-with-lids",
+        "name": "Plastic Containers",
+        "pack": "500ml with Lids",
+        "price": 250,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "plastic-containers-650ml-with-lids",
+        "name": "Plastic Containers",
+        "pack": "650ml With Lids",
+        "price": 250,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "plastic-containers-1000ml-with-lids",
+        "name": "Plastic Containers",
+        "pack": "1000ml With Lids",
+        "price": 250,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "2oz-plastic-sauce-containers-with-lids-2oz-sauce-pots-with-lids",
+        "name": "2oz Plastic Sauce Containers with Lids",
+        "pack": "2oz Sauce Pots with Lids",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "foiled-lined-bags-7x9x12",
+        "name": "Foiled lined bags",
+        "pack": "7x9x12\"",
+        "price": 500,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "medium-paper-carrier-bags-250x220x110mm",
+        "name": "Medium Paper Carrier Bags",
+        "pack": "250x220x110mm",
+        "price": 250,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "large-paper-carrier-bags-305x250x135mm",
+        "name": "Large Paper Carrier Bags",
+        "pack": "305x250x135mm",
+        "price": 250,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "brown-paper-bags-12-x-12",
+        "name": "Brown Paper Bags",
+        "pack": "12 x 12\"",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "white-paper-bags-12-x-12",
+        "name": "White Paper Bags",
+        "pack": "12 x 12\"",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "carrier-bags-8x15x18",
+        "name": "Carrier Bags",
+        "pack": "8x15x18\"",
+        "price": 2000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "carrier-bags-11x17x21",
+        "name": "Carrier Bags",
+        "pack": "11x17x21",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "carrier-bags-12x18x24",
+        "name": "Carrier Bags",
+        "pack": "12x18x24\"",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "standard-bin-liners-15x29x34",
+        "name": "Standard Bin Liners",
+        "pack": "15x29x34\"",
+        "price": null,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "poly-cups-pack-of-20",
+        "name": "Poly Cups",
+        "pack": "pack of  20",
+        "price": null,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "plastic-spoons-white-disposabe",
+        "name": "Plastic Spoons",
+        "pack": "White Disposabe",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      },
+      {
+        "id": "plastic-forks-white-disposable",
+        "name": "Plastic Forks",
+        "pack": "White Disposable",
+        "price": 1000,
+        "categoryId": "packaging",
+        "categoryName": "Packaging"
+      }
+    ]
+  },
+  {
+    "id": "tissues",
+    "name": "Tissues",
+    "products": [
+      {
+        "id": "white-roll-pack-of-6",
+        "name": "White Roll",
+        "pack": "pack of 6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "white-center-feed-pack-of-6",
+        "name": "White Center Feed",
+        "pack": "pack of 6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "blue-roll-pack-of-6",
+        "name": "Blue Roll",
+        "pack": "pack of 6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "blue-roll-center-feed-pack-of-6",
+        "name": "Blue Roll Center Feed",
+        "pack": "pack of 6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "serviets-100-6",
+        "name": "Serviets",
+        "pack": "100*6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "napkins-2ply-white-100-6",
+        "name": "Napkins 2ply white",
+        "pack": "100*6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "toilet-roll-pack-of-6",
+        "name": "Toilet Roll",
+        "pack": "Pack of 6",
+        "price": null,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "white-roll-pack-of-6-2",
+        "name": "White Roll",
+        "pack": "pack of 6",
+        "price": 13,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "white-center-feed-pack-of-6-2",
+        "name": "White Center Feed",
+        "pack": "pack of 6",
+        "price": 13,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "blue-roll-pack-of-6-2",
+        "name": "Blue Roll",
+        "pack": "pack of 6",
+        "price": 13,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      },
+      {
+        "id": "blue-roll-center-feed-pack-of-6-2",
+        "name": "Blue Roll Center Feed",
+        "pack": "pack of 6",
+        "price": 13,
+        "categoryId": "tissues",
+        "categoryName": "Tissues"
+      }
+    ]
+  },
+  {
+    "id": "toiletiers",
+    "name": "Toiletiers",
+    "products": [
+      {
+        "id": "ktc-washing-up-liquid-5lt",
+        "name": "KTC Washing up Liquid 5lt",
+        "pack": null,
+        "price": 3.49,
+        "categoryId": "toiletiers",
+        "categoryName": "Toiletiers"
+      },
+      {
+        "id": "ktc-bleech-5lt",
+        "name": "KTC Bleech 5lt",
+        "pack": null,
+        "price": 3.49,
+        "categoryId": "toiletiers",
+        "categoryName": "Toiletiers"
+      },
+      {
+        "id": "ktc-malt-vinegar-5lt",
+        "name": "KTC Malt Vinegar 5lt",
+        "pack": null,
+        "price": 3.49,
+        "categoryId": "toiletiers",
+        "categoryName": "Toiletiers"
+      },
+      {
+        "id": "ktc-white-sprit-vinegar-5lt",
+        "name": "KTC White Sprit Vinegar 5lt",
+        "pack": null,
+        "price": 2.99,
+        "categoryId": "toiletiers",
+        "categoryName": "Toiletiers"
+      }
+    ]
+  },
+  {
+    "id": "caustic-soda",
+    "name": "Caustic Soda",
+    "products": [
+      {
+        "id": "glass-cleaner",
+        "name": "Glass Cleaner",
+        "pack": null,
+        "price": 1.99,
+        "categoryId": "caustic-soda",
+        "categoryName": "Caustic Soda"
+      },
+      {
+        "id": "steel-scoureres",
+        "name": "Steel Scoureres",
+        "pack": null,
+        "price": 1.99,
+        "categoryId": "caustic-soda",
+        "categoryName": "Caustic Soda"
+      },
+      {
+        "id": "green-scourers",
+        "name": "Green Scourers",
+        "pack": null,
+        "price": 1.99,
+        "categoryId": "caustic-soda",
+        "categoryName": "Caustic Soda"
+      },
+      {
+        "id": "white-tea-towels",
+        "name": "White Tea Towels",
+        "pack": null,
+        "price": 1.99,
+        "categoryId": "caustic-soda",
+        "categoryName": "Caustic Soda"
+      },
+      {
+        "id": "gloves",
+        "name": "Gloves",
+        "pack": null,
+        "price": 4.99,
+        "categoryId": "caustic-soda",
+        "categoryName": "Caustic Soda"
+      }
+    ]
+  },
+  {
+    "id": "serviets",
+    "name": "Serviets",
+    "products": [
+      {
+        "id": "napkins-2ply-white",
+        "name": "Napkins 2ply white",
+        "pack": null,
+        "price": 2.99,
+        "categoryId": "serviets",
+        "categoryName": "Serviets"
+      }
+    ]
+  },
+  {
+    "id": "soft-drinks",
+    "name": "Soft Drinks",
+    "products": [
+      {
+        "id": "coke-cans",
+        "name": "Coke cans",
+        "pack": null,
+        "price": 11.99,
+        "categoryId": "soft-drinks",
+        "categoryName": "Soft Drinks"
+      },
+      {
+        "id": "fanta",
+        "name": "Fanta",
+        "pack": null,
+        "price": 11.99,
+        "categoryId": "soft-drinks",
+        "categoryName": "Soft Drinks"
+      },
+      {
+        "id": "sprite",
+        "name": "Sprite",
+        "pack": null,
+        "price": 11.99,
+        "categoryId": "soft-drinks",
+        "categoryName": "Soft Drinks"
+      }
+    ]
+  },
+  {
+    "id": "coke-glass-bottles",
+    "name": "Coke Glass bottles",
+    "products": [
+      {
+        "id": "red-bull",
+        "name": "Red Bull",
+        "pack": null,
+        "price": 19.99,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      },
+      {
+        "id": "tropical-orange-juice",
+        "name": "Tropical Orange Juice",
+        "pack": null,
+        "price": 13.99,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      },
+      {
+        "id": "rubion-mango-juice",
+        "name": "Rubion Mango Juice",
+        "pack": null,
+        "price": 14.99,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      },
+      {
+        "id": "limca-330ml-x-24",
+        "name": "Limca",
+        "pack": "330ml x 24",
+        "price": 21,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      },
+      {
+        "id": "thumsup-330ml-x-25",
+        "name": "Thumsup",
+        "pack": "330ml x 25",
+        "price": 210,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      },
+      {
+        "id": "lassi-mango-300ml-x-6",
+        "name": "Lassi mango",
+        "pack": "300ml x 6",
+        "price": 3.39,
+        "categoryId": "coke-glass-bottles",
+        "categoryName": "Coke Glass bottles"
+      }
+    ]
+  }
+]
