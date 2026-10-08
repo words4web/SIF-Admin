@@ -1,4 +1,4 @@
-git branch -M main# dependencies
+# dependencies
 /node_modules
 /.pnpm-debug.log*
 
@@ -28,3 +28,7 @@ logs
 # OS files
 .DS_Store
 Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
