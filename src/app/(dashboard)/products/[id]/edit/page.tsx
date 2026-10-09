@@ -102,7 +102,6 @@ export default function EditProductPage() {
           typeof p === "object" ? p?._id : p,
         )
       : [],
-    isVatApplicable: product?.isVatApplicable,
     isActive: product?.isActive,
   };
 

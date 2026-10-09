@@ -22,7 +22,6 @@ export interface OrderItem {
     | string;
   quantity: number;
   price: number;
-  isVatApplicable?: boolean;
 }
 
 export interface OrderRow {
@@ -37,7 +36,6 @@ export interface OrderRow {
   };
   items: OrderItem[];
   subtotal: number;
-  vat: number;
   total: number;
   delivery: DeliveryDetails;
   status: OrderStatus;
@@ -96,10 +94,8 @@ export interface OrderItemsTableProps {
     };
     quantity: number;
     price: number;
-    isVatApplicable?: boolean;
   }>;
   subtotal?: number;
-  vat?: number;
   total?: number;
 }
 
@@ -110,7 +106,6 @@ export interface SelectedOrderItem {
   pack?: string;
   unit?: string;
   image?: string;
-  isVatApplicable?: boolean;
   quantity: number;
 }
 

@@ -62,7 +62,6 @@ export default function CreateOrderPage() {
           pack: product.pack,
           unit: product.unit,
           image: imageSrc,
-          isVatApplicable: !!product.isVatApplicable,
           quantity: 1,
         },
       ];

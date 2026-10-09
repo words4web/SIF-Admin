@@ -28,7 +28,6 @@ export interface ProductRow {
   keywords?: string[];
   images?: string[];
   relatedProducts?: RelatedProductItem[] | string[];
-  isVatApplicable: boolean;
   isActive: boolean;
   createdAt: string;
   updatedAt: string;
@@ -45,7 +44,6 @@ export interface ProductPayload {
   keywords: string[];
   images?: string[];
   relatedProducts?: string[];
-  isVatApplicable?: boolean;
   isActive?: boolean;
 }
 
@@ -60,7 +58,6 @@ export interface ProductFormValues {
   keywords: string[];
   images: string[];
   relatedProducts: string[];
-  isVatApplicable: boolean;
   isActive: boolean;
 }
 

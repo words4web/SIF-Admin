@@ -93,7 +93,6 @@ export default function OrderDetailPage() {
       <OrderItemsTable
         items={order?.items || []}
         subtotal={order?.subtotal}
-        vat={order?.vat}
         total={order?.total}
       />
     </div>

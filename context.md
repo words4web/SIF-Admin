@@ -79,7 +79,7 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 │   ├── order/                # Order creation & builder components
 │   │   ├── CustomerSelector.tsx # Debounced customer search (>= 2 chars) with address dropdown preview
 │   │   ├── ProductSelector.tsx  # Cached product search catalog with category filtering & quantity selector
-│   │   └── OrderSummaryCard.tsx # Sticky real-time subtotal, 20% VAT calculation, notes, and submit action
+│   │   └── OrderSummaryCard.tsx # Sticky real-time subtotal and total calculation, notes, and submit action
 │   ├── product/              # Product domain components (ProductForm.tsx)
 │   ├── salesman/             # Salesman domain components (SalesmanForm.tsx)
 │   └── ui/                   # Low-level UI primitives (Button, Modal, etc.)
@@ -170,9 +170,9 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
   2. **Product Catalog Search & Selection (`ProductSelector.tsx`)**:
      - Fast cached catalog search (`useProductCatalog` calling `GET /api/v1/admin/products/catalog`).
      - Query enabled only when searching (>= 2 chars) or selecting a category from the dropdown filter.
-     - Interactive unit price preview, VAT status indicator, and quantity step counter (`+` / `-`).
+     - Interactive unit price preview, and quantity step counter (`+` / `-`).
   3. **Order Summary & Review (`OrderSummaryCard.tsx`)**:
-     - Real-time subtotal, 20% VAT calculation for VAT-applicable items, and grand total.
+     - Real-time subtotal, and grand total.
      - Optional delivery notes textarea.
      - Confirm modal review before submitting the final wholesale order.
 - **Confirmation-First Placement**:
@@ -186,13 +186,13 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 - **Product Form (`ProductForm.tsx`)**:
   - Reusable component shared by `/products/new` and `/products/[id]/edit`.
   - Driven by `react-hook-form` + `zod` schema validation.
-  - Supports detailed product fields: Name, Description, Category (Controller wrapped `<Select>`), Unit, Pack Size, Price, Status (`isActive`, `isVatApplicable`), Keywords (`KeywordsInput.tsx`), and Product Media (`ImageUploader.tsx`).
+  - Supports detailed product fields: Name, Description, Category (Controller wrapped `<Select>`), Unit, Pack Size, Price, Status (`isActive`), Keywords (`KeywordsInput.tsx`), and Product Media (`ImageUploader.tsx`).
 - **Confirmation-First Upload Workflow**:
   - Clicking "Save Changes" or "Create Product" runs form validation and opens `ConfirmModal` **before** uploading any images to AWS S3.
   - When the user confirms in `ConfirmModal`, `uploadService.processFormImages` uploads pending `File` instances to S3, returns confirmed public URLs, and executes the create/update mutation.
   - Modal displays active loading state (`"Processing..."`) while uploading and saving.
 - **Product Detail View (`/products/[id]/page.tsx`)**:
-  - Clean card layout displaying product metadata, pricing, category, pack size, VAT status, and Product Media gallery.
+  - Clean card layout displaying product metadata, pricing, category, pack size, and Product Media gallery.
 
 ---
 

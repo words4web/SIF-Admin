@@ -14,19 +14,12 @@ export function OrderSummaryCard({
   isValid,
   isSubmitting,
 }: OrderSummaryCardProps) {
-  const { subtotal, vat, total } = (selectedItems || [])?.reduce(
-    (acc, item) => {
-      const price = item?.price ?? 0;
-      const quantity = item?.quantity ?? 0;
-      const itemSubtotal = price * quantity;
-      const itemVat = item?.isVatApplicable ? itemSubtotal * 0.2 : 0;
-      acc.subtotal += itemSubtotal;
-      acc.vat += itemVat;
-      acc.total += itemSubtotal + itemVat;
-      return acc;
-    },
-    { subtotal: 0, vat: 0, total: 0 },
-  );
+  const subtotal = (selectedItems || [])?.reduce((acc, item) => {
+    const price = item?.price ?? 0;
+    const quantity = item?.quantity ?? 0;
+    return acc + price * quantity;
+  }, 0);
+  const total = subtotal;
 
   return (
     <div className="rounded-2xl border border-border bg-card p-5 space-y-5 shadow-sm sticky top-6">
@@ -56,13 +49,6 @@ export function OrderSummaryCard({
           <span>Subtotal</span>
           <span className="font-mono font-medium text-foreground">
             {formatPounds(subtotal)}
-          </span>
-        </div>
-
-        <div className="flex items-center justify-between text-muted-foreground">
-          <span>VAT (20% applicable items)</span>
-          <span className="font-mono font-medium text-foreground">
-            {formatPounds(vat)}
           </span>
         </div>
 

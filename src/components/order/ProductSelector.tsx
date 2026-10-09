@@ -152,11 +152,6 @@ export function ProductSelector({
                     <p className="text-[11px] text-muted-foreground">
                       {prod.pack ? `${prod.pack} • ` : ""}
                       {formatPounds(prod.price || 0)}
-                      {prod.isVatApplicable && (
-                        <span className="ml-1 text-[10px] font-semibold text-primary">
-                          +20% VAT
-                        </span>
-                      )}
                     </p>
                   </div>
                 </div>
@@ -218,12 +213,6 @@ export function ProductSelector({
                     <p className="text-[11px] text-muted-foreground">
                       {item.pack ? `${item.pack} • ` : ""}
                       {formatPounds(item.price)} each
-                      {item.isVatApplicable && (
-                        <span className="text-primary font-medium">
-                          {" "}
-                          (+VAT)
-                        </span>
-                      )}
                     </p>
                   </div>
 

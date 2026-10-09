@@ -49,7 +49,6 @@ export function ProductForm({
       keywords: [],
       images: [],
       relatedProducts: [],
-      isVatApplicable: false,
       isActive: true,
       ...defaultValues,
     },
@@ -251,19 +250,13 @@ export function ProductForm({
         </div>
       </FormSection>
 
-      <FormSection title="Status & Tax">
+      <FormSection title="Status">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <CheckboxCard
             id="isActive"
             label="Active Status"
             disabled={disabled}
             {...register("isActive")}
-          />
-          <CheckboxCard
-            id="isVatApplicable"
-            label="VAT Applicable"
-            disabled={disabled}
-            {...register("isVatApplicable")}
           />
         </div>
       </FormSection>

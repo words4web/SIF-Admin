@@ -144,22 +144,6 @@ export default function ProductDetailPage() {
                       : "-"}
                   </p>
                 </div>
-
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    VAT Applicable
-                  </span>
-                  <div className="mt-1">
-                    <span
-                      className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold border ${
-                        product?.isVatApplicable
-                          ? "bg-amber-500/10 text-amber-700 border-amber-500/20"
-                          : "bg-muted text-muted-foreground border-border/40"
-                      }`}>
-                      {product?.isVatApplicable ? "Yes (Standard rate)" : "No"}
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

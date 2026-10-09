@@ -8,14 +8,13 @@ import { OrderItemsTableProps } from "@/types/order.types";
 export function OrderItemsTable({
   items,
   subtotal,
-  vat,
   total,
 }: OrderItemsTableProps) {
   const columns: TableColumn<any>[] = [
     {
       key: "productName",
       header: "Product Name",
-      className: "min-w-[380px] w-[40%]",
+      className: "min-w-[380px] w-[45%]",
       render: (row) => {
         const imageUrl = row?.productId?.images?.[0];
         return (
@@ -67,25 +66,6 @@ export function OrderItemsTable({
       ),
     },
     {
-      key: "tax",
-      header: "Tax (VAT)",
-      render: (row) => {
-        const isVat = row?.isVatApplicable ?? false;
-        const itemSubtotal = (row?.price || 0) * (row?.quantity || 0);
-        const itemVat = isVat ? itemSubtotal * 0.2 : 0;
-
-        if (!isVat || itemVat === 0) {
-          return <span className="text-muted-foreground font-medium">N/A</span>;
-        }
-
-        return (
-          <span className="font-medium text-foreground">
-            {formatPounds(itemVat)}
-          </span>
-        );
-      },
-    },
-    {
       key: "totalPrice",
       header: "Total Price",
       render: (row) => (
@@ -109,22 +89,16 @@ export function OrderItemsTable({
 
       <div className="bg-muted/30 p-6 flex flex-col items-end border-b border-border">
         <div className="w-full max-w-xs space-y-2.5 text-sm">
-          <div className="flex justify-between text-white">
+          <div className="flex justify-between text-muted-foreground">
             <span>Subtotal</span>
             <span className="font-semibold text-foreground">
-              {formatPounds(subtotal)}
-            </span>
-          </div>
-          <div className="flex justify-between text-white">
-            <span>VAT (20%)</span>
-            <span className="font-semibold text-foreground">
-              {formatPounds(vat)}
+              {formatPounds(subtotal || total)}
             </span>
           </div>
           <div className="flex justify-between border-t border-border pt-3 text-base font-bold">
             <span className="text-foreground">Total Order Amount</span>
             <span className="text-primary font-serif text-xl font-extrabold">
-              {formatPounds(total)}
+              {formatPounds(total || subtotal)}
             </span>
           </div>
         </div>
