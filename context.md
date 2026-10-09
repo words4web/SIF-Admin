@@ -186,13 +186,17 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 - **Product Form (`ProductForm.tsx`)**:
   - Reusable component shared by `/products/new` and `/products/[id]/edit`.
   - Driven by `react-hook-form` + `zod` schema validation.
-  - Supports detailed product fields: Name, Description, Category (Controller wrapped `<Select>`), Unit, Pack Size, Price, Status (`isActive`), Keywords (`KeywordsInput.tsx`), and Product Media (`ImageUploader.tsx`).
-- **Confirmation-First Upload Workflow**:
-  - Clicking "Save Changes" or "Create Product" runs form validation and opens `ConfirmModal` **before** uploading any images to AWS S3.
-  - When the user confirms in `ConfirmModal`, `uploadService.processFormImages` uploads pending `File` instances to S3, returns confirmed public URLs, and executes the create/update mutation.
-  - Modal displays active loading state (`"Processing..."`) while uploading and saving.
+  - Supports detailed product fields:
+    - **Basic Details**: Name, SKU Code (unique, uppercase), URL Slug, Category (Controller-wrapped `<Select>`), Stock status & count.
+    - **Multi-Variant Pricing & Weights**: Dynamic weight (`grams` with `suffix="g"`, min 1g) and GBP price (`min 0.01`) variants with add/remove variant controls (minimum 1 variant required).
+    - **Media & Meta**: Product Media (`ImageUploader.tsx`, min 1 image, max 3 images), Keywords tag selector (`KeywordsInput.tsx`), Related Products multi-select picker, and Active status toggle.
+- **Pre-Validation & Safe Upload Workflow**:
+  - Clicking "Save Changes" or "Create Product" runs form validation and opens `ConfirmModal`.
+  - Upon user confirmation, **Pre-Validation** (`POST /api/v1/admin/products/pre-validate`) runs against the database _before_ uploading any files to AWS S3, ensuring SKU/Slug collisions or invalid category/related products fail immediately with user-friendly toast messages without creating orphaned images.
+  - S3 image uploads (`uploadService.processFormImages`) only execute once pre-validation passes cleanly.
+  - Modal automatically closes and resets loading state on errors.
 - **Product Detail View (`/products/[id]/page.tsx`)**:
-  - Clean card layout displaying product metadata, pricing, category, pack size, and Product Media gallery.
+  - Responsive card layout displaying product metadata, SKU badge, stock status, category, Product Media gallery, and an itemized grid of all weight and price variants.
 
 ---
 

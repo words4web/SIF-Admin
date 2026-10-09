@@ -7,6 +7,7 @@ import {
   useProductDetail,
   useUpdateProduct,
 } from "@/services/product/product.hook";
+import { productService } from "@/services/product/product.service";
 import { ProductForm } from "@/components/product/ProductForm";
 import { ProductFormValues } from "@/types/product/product.types";
 import { QueryBoundary } from "@/components/common/QueryBoundary";
@@ -63,9 +64,19 @@ export default function EditProductPage() {
     if (!pendingValues || !id) return;
     try {
       setIsUploading(true);
+
+      await productService.preValidate({
+        sku: pendingValues.sku,
+        slug: pendingValues.slug,
+        categoryId: pendingValues.categoryId,
+        excludeId: id,
+        relatedProducts: pendingValues.relatedProducts,
+      });
+
       const finalImages = await uploadService.processFormImages(
         pendingValues?.images,
       );
+
       updateProduct(
         { id, payload: { ...pendingValues, images: finalImages } },
         {
@@ -74,23 +85,40 @@ export default function EditProductPage() {
             router.back();
           },
           onError: () => {
+            setShowSaveModal(false);
             setIsUploading(false);
           },
         },
       );
     } catch (err: any) {
-      toast.error(err?.message || "Failed to upload images. Please try again.");
+      setShowSaveModal(false);
+      const errorMessage =
+        err?.response?.data?.message ||
+        err?.message ||
+        "Failed to update product. Please check your inputs.";
+      toast.error(errorMessage);
       setIsUploading(false);
     }
   };
 
   const formattedDefaultValues: Partial<ProductFormValues> = {
     name: product?.name,
+    sku: product?.sku || "",
     slug: product?.slug,
     description: product?.description || "",
-    pack: product?.pack,
-    price: product?.price,
-    unit: product?.unit,
+    variants:
+      Array.isArray(product?.variants) && product?.variants?.length > 0
+        ? product.variants.map((v: any) => ({
+            weight:
+              typeof v?.weight === "number"
+                ? v?.weight
+                : Number(v?.weight) || 0,
+            price:
+              typeof v?.price === "number" ? v?.price : Number(v?.price) || 0,
+          }))
+        : [{ weight: 0, price: 0 }],
+    stock: product?.stock ?? 0,
+    stockStatus: product?.stockStatus || undefined,
     categoryId:
       typeof product?.categoryId === "object"
         ? product?.categoryId?._id

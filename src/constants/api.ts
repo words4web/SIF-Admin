@@ -16,6 +16,7 @@ export const API_ROUTES = {
     LIST: "/admin/products",
     CATALOG: "/admin/products/catalog",
     CREATE: "/admin/products",
+    PRE_VALIDATE: "/admin/products/pre-validate",
     DETAIL: (id: string) => `/admin/products/${id}`,
     UPDATE: (id: string) => `/admin/products/${id}`,
     DELETE: (id: string) => `/admin/products/${id}`,

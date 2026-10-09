@@ -8,6 +8,7 @@ export interface InputProps extends Omit<
   error?: string;
   containerClassName?: string;
   prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -19,6 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       containerClassName = "",
       id,
       prefix,
+      suffix,
       ...props
     },
     ref,
@@ -41,9 +43,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             id={id}
             className={`h-11 w-full rounded-xl border border-input bg-background px-3 text-sm font-normal outline-none transition-all placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/20 focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 ${
               prefix ? "pl-8" : ""
-            } ${className}`}
+            } ${suffix ? "pr-8" : ""} ${className}`}
             {...props}
           />
+          {suffix && (
+            <span className="absolute right-3.5 text-sm font-semibold text-muted-foreground select-none pointer-events-none">
+              {suffix}
+            </span>
+          )}
         </div>
         {error && (
           <p

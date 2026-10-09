@@ -114,23 +114,36 @@ export default function ProductDetailPage() {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    Price
+                    SKU Code
                   </span>
-                  <p className="text-2xl font-black text-foreground mt-1">
-                    £{product?.price?.toFixed(2)}
+                  <p className="text-base font-mono font-bold text-foreground mt-1 bg-muted/60 px-2.5 py-1 rounded inline-block">
+                    {product?.sku || "N/A"}
                   </p>
                 </div>
 
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    Pack Size
+                    Stock & Status
                   </span>
-                  <p className="text-lg font-semibold text-foreground mt-1">
-                    {product?.pack}
-                  </p>
+                  <div className="mt-1">
+                    <p className="text-lg font-bold text-foreground">
+                      {product?.stock ?? 0}{" "}
+                      <span className="text-xs font-normal text-muted-foreground">
+                        units
+                      </span>
+                    </p>
+                    <span
+                      className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mt-0.5 ${
+                        product?.stockStatus === "OUT_OF_STOCK"
+                          ? "bg-destructive/10 text-destructive"
+                          : "bg-emerald-500/10 text-emerald-700"
+                      }`}>
+                      {product?.stockStatus?.replace(/_/g, " ") || "IN STOCK"}
+                    </span>
+                  </div>
                 </div>
 
                 <div>
@@ -143,6 +156,33 @@ export default function ProductDetailPage() {
                       ? product.categoryId?.name
                       : "-"}
                   </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border/40">
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-2">
+                  Weight & Price Variants ({product?.variants?.length || 0})
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {Array.isArray(product?.variants) &&
+                  product?.variants?.length > 0 ? (
+                    product?.variants?.map((v: any, idx: number) => (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-between p-3.5 rounded-xl border border-border/70 bg-muted/30">
+                        <span className="text-sm font-semibold text-foreground">
+                          {v?.weight}g
+                        </span>
+                        <span className="text-base font-black text-primary">
+                          £{Number(v?.price).toFixed(2)}
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    <span className="text-sm text-muted-foreground italic">
+                      No variants available
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

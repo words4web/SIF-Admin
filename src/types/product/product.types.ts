@@ -1,24 +1,29 @@
 import { DropdownOption } from "@/components/common/PaginatedDropdown";
-import { EProductUnit } from "@/constants/product.constants";
+import { EStockStatus } from "@/constants/product.constants";
+
+export interface ProductVariant {
+  weight: number;
+  price: number;
+}
 
 export interface RelatedProductItem {
   _id: string;
   name: string;
   slug?: string;
+  sku?: string;
   description?: string;
-  pack?: string;
-  price?: number;
-  unit?: EProductUnit;
+  variants?: ProductVariant[];
 }
 
 export interface ProductRow {
   _id: string;
   name: string;
   slug: string;
+  sku: string;
   description?: string;
-  pack: string;
-  price: number;
-  unit: EProductUnit;
+  variants: ProductVariant[];
+  stock: number;
+  stockStatus: EStockStatus;
   categoryId:
     | {
         _id: string;
@@ -36,10 +41,11 @@ export interface ProductRow {
 export interface ProductPayload {
   name: string;
   slug: string;
+  sku: string;
   description?: string;
-  pack: string;
-  price: number;
-  unit: EProductUnit;
+  variants: ProductVariant[];
+  stock?: number;
+  stockStatus?: EStockStatus;
   categoryId: string;
   keywords: string[];
   images?: string[];
@@ -50,10 +56,11 @@ export interface ProductPayload {
 export interface ProductFormValues {
   name: string;
   slug: string;
+  sku: string;
   description?: string;
-  pack: string;
-  price: number;
-  unit: EProductUnit;
+  variants: ProductVariant[];
+  stock: number;
+  stockStatus: EStockStatus;
   categoryId: string;
   keywords: string[];
   images: string[];

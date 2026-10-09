@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useCreateProduct } from "@/services/product/product.hook";
+import { productService } from "@/services/product/product.service";
 import { ProductForm } from "@/components/product/ProductForm";
 import { ProductFormValues } from "@/types/product/product.types";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -28,9 +29,18 @@ export default function NewProductPage() {
     if (!pendingValues) return;
     try {
       setIsUploading(true);
+
+      await productService.preValidate({
+        sku: pendingValues.sku,
+        slug: pendingValues.slug,
+        categoryId: pendingValues.categoryId,
+        relatedProducts: pendingValues.relatedProducts,
+      });
+
       const finalImages = await uploadService.processFormImages(
         pendingValues?.images,
       );
+
       createProduct(
         { ...pendingValues, images: finalImages },
         {
@@ -39,12 +49,18 @@ export default function NewProductPage() {
             router.back();
           },
           onError: () => {
+            setShowCreateModal(false);
             setIsUploading(false);
           },
         },
       );
     } catch (err: any) {
-      toast.error(err?.message || "Failed to upload images. Please try again.");
+      setShowCreateModal(false);
+      const errorMessage =
+        err?.response?.data?.message ||
+        err?.message ||
+        "Failed to create product. Please check your inputs.";
+      toast.error(errorMessage);
       setIsUploading(false);
     }
   };

@@ -41,6 +41,20 @@ export const productService = {
     return response?.data;
   },
 
+  preValidate: async (payload: {
+    sku: string;
+    slug: string;
+    categoryId: string;
+    excludeId?: string;
+    relatedProducts?: string[];
+  }) => {
+    const response = await axiosInstance.post(
+      API_ROUTES.PRODUCTS.PRE_VALIDATE,
+      payload,
+    );
+    return response?.data;
+  },
+
   update: async (id: string, payload: Partial<ProductPayload>) => {
     const response = await axiosInstance.put(
       API_ROUTES.PRODUCTS.UPDATE(id),

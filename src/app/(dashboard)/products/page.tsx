@@ -57,15 +57,25 @@ export default function ProductsPage() {
     {
       key: "name",
       header: "Name",
-      className: "w-2/5",
+      className: "w-2/6",
       render: (row) => (
         <span className="font-semibold text-foreground">{row?.name}</span>
       ),
     },
     {
+      key: "sku",
+      header: "SKU",
+      className: "w-28",
+      render: (row) => (
+        <span className="font-mono text-xs text-muted-foreground bg-muted/60 px-2 py-1 rounded">
+          {row?.sku || "-"}
+        </span>
+      ),
+    },
+    {
       key: "categoryId",
       header: "Category",
-      className: "w-1/5",
+      className: "w-1/6",
       render: (row) => {
         const cat =
           typeof row?.categoryId === "object" ? row?.categoryId?.name : "-";
@@ -75,22 +85,52 @@ export default function ProductsPage() {
       },
     },
     {
-      key: "pack",
-      header: "Pack Size",
-      className: "w-28",
-      render: (row) => (
-        <span className="text-sm text-foreground">{row?.pack}</span>
-      ),
+      key: "variants",
+      header: "Weights & Pricing",
+      className: "w-1/4",
+      render: (row) => {
+        const variants = row?.variants || [];
+        if (!variants.length)
+          return <span className="text-sm text-muted-foreground">-</span>;
+        return (
+          <div className="flex flex-wrap gap-1.5 max-w-xs">
+            {variants?.map((v, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-muted text-xs font-medium text-foreground border border-border/40">
+                <span className="font-semibold">{v.weight}g:</span>
+                <span className="text-primary font-bold">
+                  £{Number(v.price).toFixed(2)}
+                </span>
+              </span>
+            ))}
+          </div>
+        );
+      },
     },
     {
-      key: "price",
-      header: "Price",
+      key: "stock",
+      header: "Stock",
       className: "w-28",
-      render: (row) => (
-        <span className="text-sm font-bold text-foreground">
-          £{row?.price?.toFixed(2)}
-        </span>
-      ),
+      render: (row) => {
+        const isOutOfStock =
+          row?.stockStatus === "OUT_OF_STOCK" ||
+          (row?.stock !== undefined && row?.stock <= 0);
+        return (
+          <div className="flex flex-col">
+            <span className="text-sm font-medium text-foreground">
+              {row?.stock ?? 0}
+            </span>
+            <span
+              className={`text-[10px] font-semibold uppercase tracking-wider ${
+                isOutOfStock ? "text-destructive" : "text-emerald-600"
+              }`}>
+              {row?.stockStatus?.replace(/_/g, " ") ||
+                (row?.stock && row.stock > 0 ? "IN STOCK" : "OUT OF STOCK")}
+            </span>
+          </div>
+        );
+      },
     },
     {
       key: "isActive",
