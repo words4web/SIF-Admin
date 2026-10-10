@@ -100,7 +100,7 @@ export default function ProductsPage() {
                 className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-muted text-xs font-medium text-foreground border border-border/40">
                 <span className="font-semibold">{v.weight}g:</span>
                 <span className="text-primary font-bold">
-                  £{Number(v.price).toFixed(2)}
+                  €{Number(v.price).toFixed(2)}
                 </span>
               </span>
             ))}

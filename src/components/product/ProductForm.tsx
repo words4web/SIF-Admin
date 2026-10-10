@@ -301,9 +301,9 @@ export function ProductForm({
                     type="number"
                     step="0.01"
                     min={0.01}
-                    label={index === 0 ? "Price (£) *" : undefined}
+                    label={index === 0 ? "Price (€) *" : undefined}
                     placeholder="0.00"
-                    prefix="£"
+                    prefix="€"
                     className="h-11 text-sm pr-4"
                     disabled={disabled}
                     error={errors.variants?.[index]?.price?.message}

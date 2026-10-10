@@ -174,7 +174,7 @@ export default function ProductDetailPage() {
                           {v?.weight}g
                         </span>
                         <span className="text-base font-black text-primary">
-                          £{Number(v?.price).toFixed(2)}
+                          €{Number(v?.price).toFixed(2)}
                         </span>
                       </div>
                     ))

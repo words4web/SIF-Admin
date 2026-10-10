@@ -1,13 +1,14 @@
-const currency = new Intl.NumberFormat("en-GB", {
+const currency = new Intl.NumberFormat("it-IT", {
   style: "currency",
-  currency: "GBP",
+  currency: "EUR",
 });
 
 export function formatPrice(value: number | null | undefined): string {
-  if (value == null) return "POA";
+  if (value == null) return "N/A";
   return currency.format(value);
 }
 
+export const formatEuros = formatPrice;
 export const formatPounds = formatPrice;
 
 export function hueIndex(seed: string): number {
