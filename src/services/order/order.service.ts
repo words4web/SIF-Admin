@@ -20,7 +20,7 @@ export const orderService = {
   create: async (payload: {
     userId: string;
     addressId: string;
-    items: { productId: string; quantity: number }[];
+    items: { productId: string; weight?: number; quantity: number }[];
     notes?: string;
   }) => {
     const response = await axiosInstance.post(

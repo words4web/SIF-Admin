@@ -20,6 +20,7 @@ export interface OrderItem {
         isActive?: boolean;
       }
     | string;
+  weight?: number;
   quantity: number;
   price: number;
 }
@@ -92,6 +93,7 @@ export interface OrderItemsTableProps {
       images?: string[];
       isActive?: boolean;
     };
+    weight?: number;
     quantity: number;
     price: number;
   }>;
@@ -103,6 +105,7 @@ export interface SelectedOrderItem {
   productId: string;
   name: string;
   price: number;
+  weight?: number;
   pack?: string;
   unit?: string;
   image?: string;
@@ -118,9 +121,16 @@ export interface CustomerSelectorProps {
 
 export interface ProductSelectorProps {
   selectedItems: SelectedOrderItem[];
-  onAddItem: (product: any) => void;
-  onUpdateQuantity: (productId: string, quantity: number) => void;
-  onRemoveItem: (productId: string) => void;
+  onAddItem: (
+    product: any,
+    variant?: { weight: number; price: number },
+  ) => void;
+  onUpdateQuantity: (
+    productId: string,
+    weight: number | undefined,
+    quantity: number,
+  ) => void;
+  onRemoveItem: (productId: string, weight?: number) => void;
 }
 
 export interface OrderSummaryCardProps {

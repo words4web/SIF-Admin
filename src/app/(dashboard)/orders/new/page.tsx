@@ -37,12 +37,23 @@ export default function CreateOrderPage() {
     setSelectedAddressId("");
   };
 
-  const handleAddItem = (product: any) => {
+  const handleAddItem = (
+    product: any,
+    variant?: { weight: number; price: number },
+  ) => {
+    const weight = variant?.weight;
+    const price = variant?.price ?? product.price ?? 0;
+
     setSelectedItems((prev) => {
-      const existing = prev.find((item) => item.productId === product._id);
+      const existing = prev.find(
+        (item) =>
+          item.productId === product._id &&
+          (weight ? item.weight === weight : true),
+      );
       if (existing) {
         return prev.map((item) =>
-          item.productId === product._id
+          item.productId === product._id &&
+          (weight ? item.weight === weight : true)
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
@@ -58,7 +69,8 @@ export default function CreateOrderPage() {
         {
           productId: product._id,
           name: product.name,
-          price: product.price || 0,
+          price,
+          weight,
           pack: product.pack,
           unit: product.unit,
           image: imageSrc,
@@ -68,21 +80,33 @@ export default function CreateOrderPage() {
     });
   };
 
-  const handleUpdateQuantity = (productId: string, quantity: number) => {
+  const handleUpdateQuantity = (
+    productId: string,
+    weight: number | undefined,
+    quantity: number,
+  ) => {
     if (quantity <= 0) {
-      handleRemoveItem(productId);
+      handleRemoveItem(productId, weight);
       return;
     }
     setSelectedItems((prev) =>
       prev.map((item) =>
-        item.productId === productId ? { ...item, quantity } : item,
+        item.productId === productId && (weight ? item.weight === weight : true)
+          ? { ...item, quantity }
+          : item,
       ),
     );
   };
 
-  const handleRemoveItem = (productId: string) => {
+  const handleRemoveItem = (productId: string, weight?: number) => {
     setSelectedItems((prev) =>
-      prev.filter((item) => item.productId !== productId),
+      prev.filter(
+        (item) =>
+          !(
+            item.productId === productId &&
+            (weight ? item.weight === weight : true)
+          ),
+      ),
     );
   };
 
@@ -103,6 +127,7 @@ export default function CreateOrderPage() {
       addressId: selectedAddressId,
       items: selectedItems.map((item) => ({
         productId: item.productId,
+        weight: item.weight,
         quantity: item.quantity,
       })),
       notes: notes.trim() || undefined,

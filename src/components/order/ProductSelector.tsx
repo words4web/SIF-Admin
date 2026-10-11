@@ -6,7 +6,7 @@ import { Plus, Minus, Trash2, Search, Package } from "lucide-react";
 import { Input } from "@/components/common/Input";
 import { Select } from "@/components/common/Select";
 import { Button } from "@/components/ui/button";
-import { formatPounds } from "@/lib/format";
+import { formatPrice, formatWeight } from "@/lib/format";
 import { useProductCatalog } from "@/services/product/product.hook";
 import { useCategories } from "@/services/category/category.hook";
 import { SelectedOrderItem, ProductSelectorProps } from "@/types/order.types";
@@ -20,6 +20,9 @@ export function ProductSelector({
 }: ProductSelectorProps) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedWeightMap, setSelectedWeightMap] = useState<
+    Record<string, number>
+  >({});
 
   const debouncedSearch = useDebounce(search.trim(), 300);
   const hasSearch = debouncedSearch.length >= 2;
@@ -54,8 +57,22 @@ export function ProductSelector({
     ? rawData
     : rawData?.products || [];
 
-  const getItemQuantity = (productId: string) => {
-    const item = selectedItems.find((i) => i.productId === productId);
+  const getEffectiveVariant = (prod: any) => {
+    const variants = Array.isArray(prod?.variants) ? prod?.variants : [];
+    if (variants?.length === 0) return null;
+    const selectedWeight = selectedWeightMap[prod?._id];
+    if (selectedWeight) {
+      const found = variants?.find((v: any) => v?.weight === selectedWeight);
+      if (found) return found;
+    }
+    return variants[0];
+  };
+
+  const getItemQuantity = (productId: string, weight?: number) => {
+    const item = selectedItems?.find(
+      (i) =>
+        i?.productId === productId && (weight ? i?.weight === weight : true),
+    );
     return item ? item.quantity : 0;
   };
 
@@ -119,8 +136,14 @@ export function ProductSelector({
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[360px] overflow-y-auto pr-1">
-          {products.map((prod: any) => {
-            const currentQty = getItemQuantity(prod._id);
+          {products?.map((prod: any) => {
+            const variants = Array.isArray(prod?.variants)
+              ? prod?.variants
+              : [];
+            const activeVariant = getEffectiveVariant(prod);
+            const activeWeight = activeVariant?.weight;
+            const activePrice = activeVariant?.price ?? prod?.price ?? 0;
+            const currentQty = getItemQuantity(prod?._id, activeWeight);
             const imageSrc =
               Array.isArray(prod.images) && prod.images.length > 0
                 ? prod.images[0]
@@ -129,9 +152,9 @@ export function ProductSelector({
             return (
               <div
                 key={prod._id}
-                className="flex items-center justify-between gap-3 p-3 rounded-xl border border-border/80 bg-background hover:border-border transition-colors">
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="relative size-12 rounded-lg bg-secondary shrink-0 overflow-hidden flex items-center justify-center border border-border/60">
+                className="flex flex-col justify-between gap-3 p-3 rounded-xl border border-border/80 bg-background hover:border-border transition-colors">
+                <div className="flex items-start gap-3 min-w-0">
+                  <div className="relative size-12 rounded-lg bg-secondary shrink-0 overflow-hidden flex items-center justify-center border border-border/60 mt-0.5">
                     {imageSrc ? (
                       <Image
                         src={imageSrc}
@@ -145,46 +168,93 @@ export function ProductSelector({
                     )}
                   </div>
 
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs font-bold text-foreground truncate">
                       {prod.name}
                     </p>
-                    <p className="text-[11px] text-muted-foreground">
-                      {prod.pack ? `${prod.pack} • ` : ""}
-                      {formatPounds(prod.price || 0)}
+                    <p className="text-[11px] font-bold text-primary mt-0.5">
+                      {formatPrice(activePrice)}
+                      {activeWeight ? (
+                        <span className="ml-1 text-[10px] font-normal text-muted-foreground">
+                          ({formatWeight(activeWeight)})
+                        </span>
+                      ) : null}
                     </p>
+
+                    {variants.length > 1 && (
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {variants.map((v: any) => {
+                          const isSelected =
+                            (activeWeight || variants[0]?.weight) === v.weight;
+                          return (
+                            <button
+                              key={v.weight}
+                              type="button"
+                              onClick={() =>
+                                setSelectedWeightMap((prev) => ({
+                                  ...prev,
+                                  [prod._id]: v.weight,
+                                }))
+                              }
+                              className={`px-1.5 py-0.5 rounded text-[10px] font-bold transition-all ${
+                                isSelected
+                                  ? "bg-primary text-primary-foreground shadow-xs"
+                                  : "bg-muted text-muted-foreground hover:text-foreground"
+                              }`}>
+                              {formatWeight(v.weight)}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {currentQty === 0 ? (
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => onAddItem(prod)}
-                    className="h-8 px-2.5 text-xs shrink-0">
-                    <Plus className="size-3.5 mr-1" /> Add
-                  </Button>
-                ) : (
-                  <div className="flex items-center gap-1.5 shrink-0">
+                <div className="flex items-center justify-end pt-1 border-t border-border/40">
+                  {currentQty === 0 ? (
                     <Button
-                      size="icon-sm"
+                      size="sm"
                       variant="outline"
-                      onClick={() => onUpdateQuantity(prod._id, currentQty - 1)}
-                      className="size-7 rounded-md">
-                      <Minus className="size-3" />
+                      onClick={() =>
+                        onAddItem(prod, activeVariant || undefined)
+                      }
+                      className="h-7 px-2.5 text-xs shrink-0 font-bold">
+                      <Plus className="size-3.5 mr-1" /> Add
                     </Button>
-                    <span className="text-xs font-mono font-bold w-6 text-center">
-                      {currentQty}
-                    </span>
-                    <Button
-                      size="icon-sm"
-                      variant="outline"
-                      onClick={() => onUpdateQuantity(prod._id, currentQty + 1)}
-                      className="size-7 rounded-md">
-                      <Plus className="size-3" />
-                    </Button>
-                  </div>
-                )}
+                  ) : (
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <Button
+                        size="icon-sm"
+                        variant="outline"
+                        onClick={() =>
+                          onUpdateQuantity(
+                            prod._id,
+                            activeWeight,
+                            currentQty - 1,
+                          )
+                        }
+                        className="size-6 rounded-md">
+                        <Minus className="size-3" />
+                      </Button>
+                      <span className="text-xs font-mono font-bold w-6 text-center">
+                        {currentQty}
+                      </span>
+                      <Button
+                        size="icon-sm"
+                        variant="outline"
+                        onClick={() =>
+                          onUpdateQuantity(
+                            prod._id,
+                            activeWeight,
+                            currentQty + 1,
+                          )
+                        }
+                        className="size-6 rounded-md">
+                        <Plus className="size-3" />
+                      </Button>
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}
@@ -204,15 +274,21 @@ export function ProductSelector({
               const itemTotal = item.price * item.quantity;
               return (
                 <div
-                  key={item.productId}
+                  key={`${item.productId}-${item.weight || 0}`}
                   className="flex items-center justify-between p-3 gap-3 text-xs">
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-foreground truncate">
-                      {item.name}
-                    </p>
-                    <p className="text-[11px] text-muted-foreground">
-                      {item.pack ? `${item.pack} • ` : ""}
-                      {formatPounds(item.price)} each
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="font-semibold text-foreground truncate">
+                        {item.name}
+                      </p>
+                      {item.weight ? (
+                        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-primary/10 text-primary border border-primary/20">
+                          {formatWeight(item.weight)}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="text-[11px] text-muted-foreground mt-0.5">
+                      {formatPrice(item.price)} each
                     </p>
                   </div>
 
@@ -222,7 +298,11 @@ export function ProductSelector({
                         size="icon-sm"
                         variant="ghost"
                         onClick={() =>
-                          onUpdateQuantity(item.productId, item.quantity - 1)
+                          onUpdateQuantity(
+                            item.productId,
+                            item.weight,
+                            item.quantity - 1,
+                          )
                         }
                         className="size-6 rounded-md hover:bg-muted">
                         <Minus className="size-3" />
@@ -234,7 +314,7 @@ export function ProductSelector({
                         onChange={(e) => {
                           const val = parseInt(e.target.value, 10);
                           if (!isNaN(val) && val >= 1) {
-                            onUpdateQuantity(item.productId, val);
+                            onUpdateQuantity(item.productId, item.weight, val);
                           }
                         }}
                         className="w-10 text-center font-mono font-semibold text-xs border border-border rounded py-0.5 bg-card"
@@ -243,7 +323,11 @@ export function ProductSelector({
                         size="icon-sm"
                         variant="ghost"
                         onClick={() =>
-                          onUpdateQuantity(item.productId, item.quantity + 1)
+                          onUpdateQuantity(
+                            item.productId,
+                            item.weight,
+                            item.quantity + 1,
+                          )
                         }
                         className="size-6 rounded-md hover:bg-muted">
                         <Plus className="size-3" />
@@ -251,13 +335,13 @@ export function ProductSelector({
                     </div>
 
                     <div className="w-20 text-right font-serif font-bold text-foreground">
-                      {formatPounds(itemTotal)}
+                      {formatPrice(itemTotal)}
                     </div>
 
                     <Button
                       size="icon-sm"
                       variant="ghost"
-                      onClick={() => onRemoveItem(item.productId)}
+                      onClick={() => onRemoveItem(item.productId, item.weight)}
                       className="size-7 text-destructive hover:bg-destructive/10">
                       <Trash2 className="size-3.5" />
                     </Button>

@@ -3,7 +3,7 @@
 import { FileText, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/common/Textarea";
-import { formatPounds } from "@/lib/format";
+import { formatPrice } from "@/lib/format";
 import { SelectedOrderItem, OrderSummaryCardProps } from "@/types/order.types";
 
 export function OrderSummaryCard({
@@ -48,7 +48,7 @@ export function OrderSummaryCard({
         <div className="flex items-center justify-between text-muted-foreground">
           <span>Subtotal</span>
           <span className="font-mono font-medium text-foreground">
-            {formatPounds(subtotal)}
+            {formatPrice(subtotal)}
           </span>
         </div>
 
@@ -57,7 +57,7 @@ export function OrderSummaryCard({
             Grand Total
           </span>
           <span className="font-serif text-xl font-extrabold text-primary">
-            {formatPounds(total)}
+            {formatPrice(total)}
           </span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { CreditCard, Package } from "lucide-react";
-import { formatPounds } from "@/lib/format";
+import { formatPrice, formatWeight } from "@/lib/format";
 import { DataTable, TableColumn } from "@/components/common/DataTable";
 import { OrderItemsTableProps } from "@/types/order.types";
 
@@ -31,19 +31,28 @@ export function OrderItemsTable({
                 <Package className="size-4 text-muted-foreground/60" />
               )}
             </div>
-            <p className="font-semibold text-foreground">
-              {row?.productId?.name || "Deleted Product"}
-            </p>
+            <div className="flex items-center gap-2 flex-wrap">
+              <p className="font-semibold text-foreground">
+                {row?.productId?.name || "Deleted Product"}
+              </p>
+              {row?.weight ? (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-extrabold bg-primary/10 text-primary border border-primary/20">
+                  {formatWeight(row?.weight)}
+                </span>
+              ) : null}
+            </div>
           </div>
         );
       },
     },
     {
       key: "pack",
-      header: "Pack Size",
+      header: "Pack / Weight",
       render: (row) => (
         <span className="text-muted-foreground font-medium">
-          {row?.productId?.pack || "N/A"}
+          {row?.weight
+            ? formatWeight(row.weight)
+            : row?.productId?.pack || "N/A"}
         </span>
       ),
     },
@@ -61,7 +70,7 @@ export function OrderItemsTable({
       header: "Price at Order",
       render: (row) => (
         <span className="font-medium text-muted-foreground">
-          {formatPounds(row?.price || 0)}
+          {formatPrice(row?.price || 0)}
         </span>
       ),
     },
@@ -70,7 +79,7 @@ export function OrderItemsTable({
       header: "Total Price",
       render: (row) => (
         <span className="font-bold text-foreground">
-          {formatPounds((row?.price || 0) * (row?.quantity || 0))}
+          {formatPrice((row?.price || 0) * (row?.quantity || 0))}
         </span>
       ),
     },
@@ -92,13 +101,13 @@ export function OrderItemsTable({
           <div className="flex justify-between text-muted-foreground">
             <span>Subtotal</span>
             <span className="font-semibold text-foreground">
-              {formatPounds(subtotal || total)}
+              {formatPrice(subtotal || total)}
             </span>
           </div>
           <div className="flex justify-between border-t border-border pt-3 text-base font-bold">
             <span className="text-foreground">Total Order Amount</span>
             <span className="text-primary font-serif text-xl font-extrabold">
-              {formatPounds(total || subtotal)}
+              {formatPrice(total || subtotal)}
             </span>
           </div>
         </div>
