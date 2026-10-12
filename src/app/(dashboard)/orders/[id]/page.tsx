@@ -94,6 +94,8 @@ export default function OrderDetailPage() {
         items={order?.items || []}
         subtotal={order?.subtotal}
         total={order?.total}
+        totalWeightKg={order?.totalWeightKg}
+        charges={order?.charges}
       />
     </div>
   );

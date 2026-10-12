@@ -9,6 +9,7 @@ export function OrderItemsTable({
   items,
   subtotal,
   total,
+  charges,
 }: OrderItemsTableProps) {
   const columns: TableColumn<any>[] = [
     {
@@ -104,6 +105,25 @@ export function OrderItemsTable({
               {formatPrice(subtotal || total)}
             </span>
           </div>
+          {charges && charges?.length > 0
+            ? charges?.map((charge, idx) => (
+                <div
+                  key={idx}
+                  className="flex justify-between text-muted-foreground">
+                  <span>{charge?.name}</span>
+                  <span
+                    className={
+                      charge?.amount === 0
+                        ? "text-emerald-600 dark:text-emerald-400 font-bold"
+                        : "font-semibold text-foreground"
+                    }>
+                    {charge?.amount === 0
+                      ? "FREE"
+                      : formatPrice(charge?.amount)}
+                  </span>
+                </div>
+              ))
+            : null}
           <div className="flex justify-between border-t border-border pt-3 text-base font-bold">
             <span className="text-foreground">Total Order Amount</span>
             <span className="text-primary font-serif text-xl font-extrabold">
@@ -117,7 +137,9 @@ export function OrderItemsTable({
         <DataTable
           columns={columns}
           data={items || []}
-          keyExtractor={(row, index) => row?.productId?._id || `item-${index}`}
+          keyExtractor={(row, index) =>
+            `${row?.productId?._id || "item"}-${row?.weight || index}-${index}`
+          }
           emptyMessage="No items found in this order."
         />
       </div>

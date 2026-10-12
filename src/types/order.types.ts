@@ -38,6 +38,12 @@ export interface OrderRow {
   items: OrderItem[];
   subtotal: number;
   total: number;
+  totalWeightKg?: number;
+  charges?: Array<{
+    type?: string;
+    name: string;
+    amount: number;
+  }>;
   delivery: DeliveryDetails;
   status: OrderStatus;
   deliveryNoteUrl?: string;
@@ -99,6 +105,12 @@ export interface OrderItemsTableProps {
   }>;
   subtotal?: number;
   total?: number;
+  totalWeightKg?: number;
+  charges?: Array<{
+    type?: string;
+    name: string;
+    amount: number;
+  }>;
 }
 
 export interface SelectedOrderItem {
