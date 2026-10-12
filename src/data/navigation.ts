@@ -9,6 +9,7 @@ import {
   UserCheck,
   Bell,
   Settings,
+  SlidersHorizontal,
   ReceiptText,
   LucideIcon,
 } from "lucide-react";
@@ -65,6 +66,12 @@ export const NAVIGATION_ITEMS: NavItem[] = [
     href: ROUTES.USERS.ROOT,
     icon: Users,
     permission: "user_management",
+  },
+  {
+    name: "Configuration",
+    href: ROUTES.CONFIG,
+    icon: SlidersHorizontal,
+    adminOnly: true,
   },
   {
     name: "Price Lists",

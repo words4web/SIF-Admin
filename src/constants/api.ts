@@ -53,4 +53,5 @@ export const API_ROUTES = {
     UPDATE: (id: string) => `/admin/salesmen/${id}`,
     UPDATE_STATUS: (id: string) => `/admin/salesmen/${id}/status`,
   },
+  CONFIG: "/admin/configs",
 };

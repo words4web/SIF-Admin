@@ -33,6 +33,7 @@ export const ROUTES = {
     DETAIL: (id: string) => `/salesmen/${id}`,
   },
   SETTINGS: "/settings",
+  CONFIG: "/configs",
   NOTIFICATIONS: "/notifications",
 };
 
@@ -45,6 +46,7 @@ export const PROTECTED_ROUTES = [
   ROUTES.PRICE_LISTS.ROOT,
   ROUTES.SALESMEN.ROOT,
   ROUTES.SETTINGS,
+  ROUTES.CONFIG,
   ROUTES.NOTIFICATIONS,
 ];
 

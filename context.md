@@ -33,6 +33,7 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 │   │   └── login/            # Unified staff login page (Admin & Salesman)
 │   ├── (dashboard)/          # Protected admin/staff panel pages
 │   │   ├── categories/       # Category management (list, new, edit)
+│   │   ├── configs/          # Dedicated System Configuration page (`/configs`)
 │   │   ├── notifications/    # Dedicated Admin Notifications page
 │   │   ├── orders/           # Order management
 │   │   │   ├── [id]/         # Order detail view (OrderHeader, OrderCustomerDetails, OrderItemsTable)
@@ -255,7 +256,25 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 
 ---
 
-## 11. Italian Localization & Format Validation
+## 11. System Configuration & Dynamic Shipping Module
+
+- **Role & Access Control**:
+  - Configuration page (`/configs`) is registered with `adminOnly: true` in `navigation.ts`, restricting access to system Administrators (`superAdmin`, `subAdmin`).
+- **Data Fetching & State Lifecycle (`config.hook.ts`)**:
+  - `useAdminConfigQuery()`: Queries backend endpoint `GET /admin/configs` via TanStack Query.
+  - `useUpdateAdminConfigMutation()`: Triggers `PUT /admin/configs` mutations, automatically displaying feedback toasts via `sonner` and invalidating `["admin", "configs"]` cache.
+- **Form Architecture (`ShippingConfigSection.tsx`)**:
+  - Utilizes `react-hook-form` (`useForm<IShippingConfig>`) with explicit numerical registration (`valueAsNumber: true`, `min`, `required`).
+  - Inputs seamlessly leverage `<Input />`'s integrated `label` and `error` props without repetitive wrappers.
+  - Automatically syncs fresh server values on load/update through `useEffect` calling `reset(...)`.
+- **Configurable Attributes**:
+  - **Weight Tier Step (kg)** (`weightThresholdKg`, default `3.5` kg): Weight threshold defining each shipping charge tier.
+  - **Charge Per Tier (€)** (`chargePerWeightThreshold`, default `€5`): Fixed cost increment per step.
+  - **Free Shipping Weight (kg)** (`freeShippingWeightThresholdKg`, default `50` kg): Weight threshold beyond which wholesale shipping becomes 100% free.
+
+---
+
+## 12. Italian Localization & Format Validation
 
 - **Phone Number Validation**:
   - Customer profile, saved addresses, checkout forms, and salesman/admin order placement strictly validate Italian landline and mobile numbers (`+39...`, `3[0-9]{8,9}`, `0[0-9]{5,10}`).
@@ -264,7 +283,7 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 
 ---
 
-## 11. URL State Management (`nuqs`) & Filtering
+## 13. URL State Management (`nuqs`) & Filtering
 
 - **Nuqs Integration**: `NuqsAdapter` wrapped in root `layout.tsx` for type-safe Next.js App Router URL search parameter synchronization.
 - **Filters Hooks (`useProductFilters.ts`, `useSalesmanFilters.ts`)**:
