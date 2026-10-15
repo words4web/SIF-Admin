@@ -4,24 +4,86 @@ import {
   CheckCircle2,
   Clock,
   FileText,
-  Truck,
+  AlertCircle,
+  XCircle,
+  CreditCard,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmModal } from "@/components/common/ConfirmModal";
-
-import { OrderHeaderProps } from "@/types/order.types";
+import { OrderHeaderProps, OrderStatus } from "@/types/order.types";
 
 export function OrderHeader({
   orderId,
   createdAt,
+  status = "IN_PROCESS",
+  paymentStatus = "UNPAID",
+  paymentMethod,
   total,
-  isDelivered,
   isUpdating,
   deliveryNoteUrl,
   invoiceUrl,
   onUpdateStatus,
 }: OrderHeaderProps) {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  const renderStatusBadge = () => {
+    switch (status) {
+      case "DELIVERED":
+        return (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+            <CheckCircle2 className="size-3.5" />
+            Delivered
+          </span>
+        );
+      case "PAYMENT_PENDING":
+        return (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-0.5 text-xs font-bold text-blue-600 dark:text-blue-400">
+            <Clock className="size-3.5" />
+            Payment Pending
+          </span>
+        );
+      case "CANCELLED":
+        return (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-destructive/20 bg-destructive/10 px-3 py-0.5 text-xs font-bold text-destructive">
+            <XCircle className="size-3.5" />
+            Cancelled
+          </span>
+        );
+      case "IN_PROCESS":
+      default:
+        return (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-0.5 text-xs font-bold text-amber-700 dark:text-amber-400">
+            <Clock className="size-3.5 animate-spin" />
+            In Process
+          </span>
+        );
+    }
+  };
+
+  const renderPaymentBadge = () => {
+    const paymentColors: Record<string, string> = {
+      PAID: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+      UNPAID: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+      FAILED: "bg-destructive/10 text-destructive border-destructive/20",
+      REQUIRES_REFUND: "bg-purple-500/10 text-purple-600 border-purple-500/20",
+    };
+    const paymentLabels: Record<string, string> = {
+      PAID: "Paid",
+      UNPAID: "Unpaid",
+      FAILED: "Payment Failed",
+      REQUIRES_REFUND: "Refund Required",
+    };
+    const pStatus = paymentStatus || "UNPAID";
+    return (
+      <span
+        className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 text-xs font-semibold ${
+          paymentColors[pStatus] || "bg-secondary text-secondary-foreground"
+        }`}>
+        <CreditCard className="size-3" />
+        {paymentLabels[pStatus] || pStatus}
+      </span>
+    );
+  };
 
   return (
     <>
@@ -32,17 +94,8 @@ export function OrderHeader({
               <ShoppingBag className="size-6 text-primary" />
               Order #{orderId}
             </h1>
-            {isDelivered ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                <CheckCircle2 className="size-3.5" />
-                Delivered
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-0.5 text-xs font-bold text-amber-700 dark:text-amber-400">
-                <Clock className="size-3.5 animate-spin" />
-                In Process
-              </span>
-            )}
+            {renderStatusBadge()}
+            {renderPaymentBadge()}
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">
             Placed on{" "}
@@ -74,7 +127,7 @@ export function OrderHeader({
             </Button>
           )}
 
-          {!isDelivered && (
+          {status === "IN_PROCESS" && (
             <Button
               size="sm"
               disabled={isUpdating}
@@ -89,11 +142,15 @@ export function OrderHeader({
       <ConfirmModal
         isOpen={showConfirmModal}
         onClose={() => setShowConfirmModal(false)}
-        onConfirm={() => onUpdateStatus("DELIVERED")}
+        onConfirm={() => {
+          setShowConfirmModal(false);
+          onUpdateStatus("DELIVERED");
+        }}
         title="Mark Order as Delivered"
         description={`Are you sure you want to mark Order #${orderId} as Delivered? This will confirm that the delivery has been completed.`}
         confirmText="Confirm Delivery"
         cancelText="Cancel"
+        isLoading={isUpdating}
       />
     </>
   );

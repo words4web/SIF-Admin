@@ -80,12 +80,16 @@ export default function OrdersPage() {
       header: "Status",
       render: (row) => {
         const statusColors: Record<string, string> = {
+          PAYMENT_PENDING: "bg-blue-500/10 text-blue-600 border-blue-500/20",
           IN_PROCESS: "bg-amber-500/10 text-amber-600 border-amber-500/20",
           DELIVERED: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+          CANCELLED: "bg-destructive/10 text-destructive border-destructive/20",
         };
         const statusLabels: Record<string, string> = {
+          PAYMENT_PENDING: "Payment Pending",
           IN_PROCESS: "In Process",
           DELIVERED: "Delivered",
+          CANCELLED: "Cancelled",
         };
         return (
           <span
@@ -94,6 +98,34 @@ export default function OrdersPage() {
               "bg-secondary text-secondary-foreground"
             }`}>
             {statusLabels[row.status] || row.status}
+          </span>
+        );
+      },
+    },
+    {
+      key: "payment",
+      header: "Payment",
+      render: (row) => {
+        const paymentColors: Record<string, string> = {
+          PAID: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+          UNPAID: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+          FAILED: "bg-destructive/10 text-destructive border-destructive/20",
+          REQUIRES_REFUND:
+            "bg-purple-500/10 text-purple-600 border-purple-500/20",
+        };
+        const paymentLabels: Record<string, string> = {
+          PAID: "Paid",
+          UNPAID: "Unpaid",
+          FAILED: "Failed",
+          REQUIRES_REFUND: "Refund Required",
+        };
+        const status = row.paymentStatus || "UNPAID";
+        return (
+          <span
+            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${
+              paymentColors[status] || "bg-secondary text-secondary-foreground"
+            }`}>
+            {paymentLabels[status] || status}
           </span>
         );
       },
@@ -171,8 +203,10 @@ export default function OrdersPage() {
           setPage(1);
         }}
         categoryOptions={[
+          { value: "PAYMENT_PENDING", label: "Payment Pending" },
           { value: "IN_PROCESS", label: "In Process" },
           { value: "DELIVERED", label: "Delivered" },
+          { value: "CANCELLED", label: "Cancelled" },
         ]}
         categoryPlaceholder="All Statuses"
         onClearFilters={() => {

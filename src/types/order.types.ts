@@ -1,4 +1,12 @@
-export type OrderStatus = "IN_PROCESS" | "DELIVERED";
+export type OrderStatus =
+  | "PAYMENT_PENDING"
+  | "IN_PROCESS"
+  | "DELIVERED"
+  | "CANCELLED";
+
+export type PaymentMethod = "PAYPAL";
+
+export type PaymentStatus = "UNPAID" | "PAID" | "FAILED" | "REQUIRES_REFUND";
 
 export interface DeliveryDetails {
   businessName: string;
@@ -46,6 +54,10 @@ export interface OrderRow {
   }>;
   delivery: DeliveryDetails;
   status: OrderStatus;
+  paymentMethod?: PaymentMethod | string;
+  paymentStatus?: PaymentStatus;
+  createdBy?: string;
+  createdByModel?: "user" | "admin" | "salesman";
   deliveryNoteUrl?: string;
   invoiceUrl?: string;
   createdAt: string;
@@ -63,13 +75,14 @@ export interface OrderConfirmation {
 export interface OrderHeaderProps {
   orderId?: string;
   createdAt?: string;
-  status?: string;
+  status?: OrderStatus | string;
+  paymentStatus?: PaymentStatus | string;
+  paymentMethod?: string;
   total?: number;
-  isDelivered: boolean;
   isUpdating: boolean;
   deliveryNoteUrl?: string;
   invoiceUrl?: string;
-  onUpdateStatus: (status: "DELIVERED" | "IN_PROCESS") => void;
+  onUpdateStatus: (status: OrderStatus) => void;
 }
 
 export interface OrderCustomerDetailsProps {

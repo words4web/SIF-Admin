@@ -180,7 +180,16 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
   - Triggers `useCreateAdminOrder` mutation (`POST /api/v1/admin/orders`).
   - Automatically redirects to the newly created order detail page (`/orders/[id]`).
 
----
+### 6.1 Order Management & Payment Lifecycle (`/orders` & `/orders/[id]`)
+
+- **Full Order Lifecycle Support**:
+  - Supports all 4 system order statuses: `PAYMENT_PENDING` (Payment Pending), `IN_PROCESS` (In Process), `DELIVERED` (Delivered), `CANCELLED` (Cancelled).
+  - Status filter dropdown on `/orders` (`categoryOptions`) allows filtering by any of the 4 order statuses.
+- **Payment Status Visibility**:
+  - Orders table displays a dedicated **Payment** column with semantic color badges: `PAID` (green), `UNPAID` (amber), `FAILED` (red), `REQUIRES_REFUND` (purple).
+  - Order Detail header (`OrderHeader.tsx`) displays both the Order Status and the Payment Status badge side-by-side. Internal transaction IDs (`paypalOrderId`, `paypalCaptureId`) and ephemeral timeouts (`expiresAt`) are strictly hidden at the database schema level (`select: false`) and omitted from API responses for privacy and security.
+- **Fulfillment Guardrails**:
+  - The "Mark as Delivered" action is strictly guarded and only displayed when an order is in `IN_PROCESS` status, preventing delivered or cancelled/payment-pending orders from being erroneously marked.
 
 ## 7. Product Management & Form Workflow
 

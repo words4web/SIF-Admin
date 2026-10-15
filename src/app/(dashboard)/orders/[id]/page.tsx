@@ -56,9 +56,7 @@ export default function OrderDetailPage() {
     );
   }
 
-  const isDelivered = order.status === "DELIVERED";
-
-  const handleUpdateStatus = (newStatus: "DELIVERED" | "IN_PROCESS") => {
+  const handleUpdateStatus = (newStatus: any) => {
     updateStatusMutation.mutate({
       id: order._id,
       status: newStatus,
@@ -80,8 +78,9 @@ export default function OrderDetailPage() {
         orderId={order?.orderId}
         createdAt={order?.createdAt}
         status={order?.status}
+        paymentStatus={order?.paymentStatus}
+        paymentMethod={order?.paymentMethod}
         total={order?.total}
-        isDelivered={isDelivered}
         isUpdating={updateStatusMutation.isPending}
         invoiceUrl={order?.invoiceUrl}
         deliveryNoteUrl={order?.deliveryNoteUrl}
