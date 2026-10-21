@@ -103,17 +103,23 @@ export function ProductModalPicker({
             <>
               {products?.map((prod: any) => {
                 const isAdded = selectedProductIds?.includes(prod?._id);
+                const basePrice =
+                  Array.isArray(prod?.variants) && prod?.variants?.length > 0
+                    ? (prod?.variants[0]?.price ?? 0)
+                    : (prod?.price ?? 0);
                 return (
                   <div
                     key={prod?._id}
                     className="flex items-center justify-between py-2.5 px-2 hover:bg-muted/40 rounded-lg transition-colors">
                     <div className="min-w-0 pr-3">
                       <p className="text-xs font-semibold text-foreground truncate">
-                        {prod?.name}
+                        {typeof prod?.name === "object"
+                          ? prod?.name?.en || prod?.name?.it || "Product"
+                          : prod?.name}
                       </p>
                       <p className="text-[11px] text-muted-foreground">
                         {prod?.pack ? `${prod?.pack} • ` : ""}Base:{" "}
-                        {formatPounds(prod?.price || 0)}
+                        {formatPounds(basePrice)}
                       </p>
                     </div>
 

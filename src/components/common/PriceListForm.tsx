@@ -39,38 +39,92 @@ export function PriceListForm({
   }, [productsJson]);
 
   const handleAddProduct = (prod: any) => {
-    const existing = selectedProducts.find((p) => p.productId === prod._id);
-    if (existing) {
-      toast.info(`"${prod.name}" is already added.`);
-      return;
-    }
+    const prodName =
+      typeof prod?.name === "object"
+        ? prod?.name?.en || prod?.name?.it || "Product"
+        : String(prod?.name || "Product");
 
-    setSelectedProducts((prev) => [
-      ...prev,
-      {
+    const variants =
+      Array.isArray(prod?.variants) && prod.variants.length > 0
+        ? prod.variants
+        : null;
+
+    if (variants && variants.length > 0) {
+      const unaddedVariants = variants.filter(
+        (v: any) =>
+          !selectedProducts.some(
+            (p) => p.productId === prod._id && p.weight === v.weight,
+          ),
+      );
+
+      if (unaddedVariants.length === 0) {
+        toast.info(`All variants of "${prodName}" are already added.`);
+        return;
+      }
+
+      const newRows: SelectedProductRow[] = unaddedVariants.map((v: any) => ({
         productId: prod._id,
-        name: prod.name,
+        weight: v.weight,
+        name: `${prodName} (${v.weight}g)`,
         pack: prod.pack,
-        basePrice: prod.price || 0,
-        customPrice: prod.price || 0,
+        basePrice: v.price ?? 0,
+        customPrice: v.price ?? 0,
         images: prod.images,
-      },
-    ]);
+        variants: prod.variants,
+      }));
+
+      setSelectedProducts((prev) => [...prev, ...newRows]);
+    } else {
+      const existing = selectedProducts.find((p) => p.productId === prod._id);
+      if (existing) {
+        toast.info(`"${prodName}" is already added.`);
+        return;
+      }
+
+      const defaultPrice = prod?.price ?? 0;
+
+      setSelectedProducts((prev) => [
+        ...prev,
+        {
+          productId: prod._id,
+          weight: null,
+          name: prodName,
+          pack: prod.pack,
+          basePrice: defaultPrice,
+          customPrice: defaultPrice,
+          images: prod.images,
+        },
+      ]);
+    }
   };
 
-  const handleRemoveProduct = (productId: string) => {
+  const handleRemoveProduct = (productId: string, weight?: number | null) => {
     setSelectedProducts((prev) =>
-      prev.filter((p) => p.productId !== productId),
+      prev.filter((p) => {
+        if (p.productId !== productId) return true;
+        if (weight !== undefined && weight !== null) {
+          return p.weight !== weight;
+        }
+        return false;
+      }),
     );
   };
 
-  const handleCustomPriceChange = (productId: string, value: number) => {
+  const handleCustomPriceChange = (
+    productId: string,
+    value: number,
+    weight?: number | null,
+  ) => {
     setSelectedProducts((prev) =>
-      prev.map((p) =>
-        p.productId === productId
-          ? { ...p, customPrice: Math.max(0, value) }
-          : p,
-      ),
+      prev.map((p) => {
+        const matchesProduct = p.productId === productId;
+        const matchesWeight =
+          weight !== undefined && weight !== null ? p.weight === weight : true;
+        if (matchesProduct && matchesWeight) {
+          return { ...p, customPrice: Math.max(0, value) };
+        }
+        return p;
+      }),
     );
   };
 
@@ -86,6 +140,7 @@ export function PriceListForm({
       name: name.trim(),
       products: selectedProducts.map((p) => ({
         productId: p.productId,
+        weight: p.weight ?? null,
         price: Number(p.customPrice) || 0,
       })),
     });
@@ -171,7 +226,7 @@ export function PriceListForm({
                     const diff = p?.customPrice - p?.basePrice;
                     return (
                       <tr
-                        key={p.productId}
+                        key={`${p.productId}-${p.weight ?? "default"}`}
                         className="hover:bg-muted/30 transition-colors">
                         <td className="py-2.5 px-3 font-medium text-foreground">
                           {p.name}
@@ -193,6 +248,7 @@ export function PriceListForm({
                                 handleCustomPriceChange(
                                   p.productId,
                                   parseFloat(e.target.value) || 0,
+                                  p.weight,
                                 )
                               }
                               className="w-24 rounded-lg border border-input bg-background px-2.5 py-1 text-xs font-semibold text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -215,7 +271,9 @@ export function PriceListForm({
                         <td className="py-2.5 px-3 text-right">
                           <button
                             type="button"
-                            onClick={() => handleRemoveProduct(p.productId)}
+                            onClick={() =>
+                              handleRemoveProduct(p.productId, p.weight)
+                            }
                             className="text-muted-foreground hover:text-destructive p-1 rounded transition-colors"
                             aria-label="Remove item">
                             <Trash2 className="size-4" />

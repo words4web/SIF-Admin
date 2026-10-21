@@ -251,7 +251,8 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 - **Reusable Component Architecture**:
   - **`PriceListForm.tsx` (`src/components/common/PriceListForm.tsx`)**:
     - Unified form component shared across Create (`/price-lists/new`) and Edit (`/price-lists/[id]`).
-    - Encapsulates name input, product table, base price reference, custom price numeric inputs, live price diff badges (`+€ / -€`), row deletion, and product modal triggers.
+    - Encapsulates name input, multi-variant product rows (individual row per variant weight with base price and custom price input), live price diff badges (`+€ / -€`), row deletion, and product modal triggers.
+    - Automatically maps each variant when a product with multiple weights is selected, allowing custom rates per weight variant.
   - **`ProductModalPicker.tsx` (`src/components/common/ProductModalPicker.tsx`)**:
     - Declarative infinite scroll product selector powered by TanStack's `useInfiniteQuery` and `useDebounce`.
     - Automatically handles deduplication of product IDs and provides a clean "+ Add" / "Remove" interaction.
@@ -261,7 +262,7 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 - **Pages & Routing**:
   - `/price-lists` (`page.tsx`): Paginated table of all price lists with products count, creation date, and search.
   - `/price-lists/new` (`page.tsx`): Streamlined create page delegating to `<PriceListForm />`.
-  - `/price-lists/[id]` (`page.tsx`): Detail/edit page with `<QueryBoundary />`, `<PriceListForm />`, and `<ConfirmModal />` for permanent deletion.
+  - `/price-lists/[id]` (`page.tsx`): Detail/edit page with `<QueryBoundary />`, `<PriceListForm />` (populating variant base rates and weights), and `<ConfirmModal />` for permanent deletion.
 
 ---
 

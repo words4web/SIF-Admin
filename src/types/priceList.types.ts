@@ -2,6 +2,7 @@ import { ProductRow } from "./product/product.types";
 
 export interface PriceListProductItem {
   productId: string | ProductRow | any;
+  weight?: number | null;
   price: number;
 }
 
@@ -18,6 +19,7 @@ export interface CreatePriceListPayload {
   name: string;
   products: {
     productId: string;
+    weight?: number | null;
     price: number;
   }[];
 }
@@ -26,17 +28,20 @@ export interface UpdatePriceListPayload {
   name?: string;
   products?: {
     productId: string;
+    weight?: number | null;
     price: number;
   }[];
 }
 
 export interface SelectedProductRow {
   productId: string;
+  weight?: number | null;
   name: string;
   pack: string;
   basePrice: number;
   customPrice: number;
   images?: string[];
+  variants?: { weight: number; price: number }[];
 }
 
 export interface UserPriceListSectionProps {
@@ -56,6 +61,7 @@ export interface PriceListFormData {
   name: string;
   products: {
     productId: string;
+    weight?: number | null;
     price: number;
   }[];
 }

@@ -1,30 +1,37 @@
+import type { UseFormRegister, FieldErrors } from "react-hook-form";
+
+export interface LocalizedString {
+  en: string;
+  it: string;
+}
+
 export interface CategoryRow {
   _id: string;
-  name: string;
+  name: LocalizedString;
   slug: string;
   image?: string | null;
-  tagline?: string | null;
-  description?: string | null;
+  tagline?: LocalizedString | null;
+  description?: LocalizedString | null;
   isActive: boolean;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface CategoryPayload {
-  name: string;
+  name: LocalizedString;
   slug: string;
   image?: string | null;
-  tagline?: string | null;
-  description?: string | null;
+  tagline?: LocalizedString | null;
+  description?: LocalizedString | null;
   isActive?: boolean;
 }
 
 export interface CategoryFormValues {
-  name: string;
+  name: LocalizedString;
   slug: string;
   image?: (string | File)[];
-  tagline?: string;
-  description?: string;
+  tagline?: LocalizedString;
+  description?: LocalizedString;
   isActive: boolean;
 }
 
@@ -33,4 +40,25 @@ export interface CategoryFormProps {
   onSubmit: (values: CategoryFormValues) => void;
   isLoading?: boolean;
   submitLabel?: string;
+}
+
+export interface CategoryLanguagePanelProps {
+  lang: "en" | "it";
+  flag: string;
+  title: string;
+  subtitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  nameRequiredMsg: string;
+  taglineLabel: string;
+  taglinePlaceholder: string;
+  taglineMaxMsg: string;
+  descriptionLabel: string;
+  descriptionPlaceholder: string;
+  descriptionMaxMsg: string;
+  taglineValue: string;
+  descriptionValue: string;
+  register: UseFormRegister<CategoryFormValues>;
+  errors: FieldErrors<CategoryFormValues>;
+  isLoading?: boolean;
 }

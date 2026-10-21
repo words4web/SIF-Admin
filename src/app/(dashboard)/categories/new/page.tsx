@@ -9,6 +9,7 @@ import { CategoryFormValues } from "@/types/category/category.types";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ROUTES } from "@/constants/routes";
 import { uploadService } from "@/services/upload/upload.service";
+import { cleanLocalizedString } from "@/utils/localization";
 
 export default function NewCategoryPage() {
   const router = useRouter();
@@ -30,11 +31,14 @@ export default function NewCategoryPage() {
 
       createCategory(
         {
-          name: values.name,
+          name: {
+            en: values.name?.en?.trim() || "",
+            it: values.name?.it?.trim() || "",
+          },
           slug: values.slug,
           image: finalImageUrl,
-          tagline: values.tagline?.trim() || null,
-          description: values.description?.trim() || null,
+          tagline: cleanLocalizedString(values.tagline),
+          description: cleanLocalizedString(values.description),
           isActive: values.isActive,
         },
         {

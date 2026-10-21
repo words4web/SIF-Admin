@@ -14,6 +14,7 @@ import { QueryBoundary } from "@/components/common/QueryBoundary";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ConfirmModal } from "@/components/common/ConfirmModal";
 import { uploadService } from "@/services/upload/upload.service";
+import { cleanLocalizedString } from "@/utils/localization";
 
 export default function EditProductPage() {
   const { id } = useParams<{ id: string }>();
@@ -78,7 +79,18 @@ export default function EditProductPage() {
       );
 
       updateProduct(
-        { id, payload: { ...pendingValues, images: finalImages } },
+        {
+          id,
+          payload: {
+            ...pendingValues,
+            name: {
+              en: pendingValues.name?.en?.trim() || "",
+              it: pendingValues.name?.it?.trim() || "",
+            },
+            description: cleanLocalizedString(pendingValues.description),
+            images: finalImages,
+          },
+        },
         {
           onSuccess: () => {
             setShowSaveModal(false);
@@ -101,11 +113,27 @@ export default function EditProductPage() {
     }
   };
 
+  const initialName =
+    typeof product?.name === "object"
+      ? product.name
+      : {
+          en: (product?.name as any) || "",
+          it: (product?.name as any) || "",
+        };
+
+  const initialDescription =
+    typeof product?.description === "object"
+      ? product.description
+      : {
+          en: (product?.description as any) || "",
+          it: (product?.description as any) || "",
+        };
+
   const formattedDefaultValues: Partial<ProductFormValues> = {
-    name: product?.name,
+    name: initialName,
     sku: product?.sku || "",
     slug: product?.slug,
-    description: product?.description || "",
+    description: initialDescription,
     variants:
       Array.isArray(product?.variants) && product?.variants?.length > 0
         ? product.variants.map((v: any) => ({

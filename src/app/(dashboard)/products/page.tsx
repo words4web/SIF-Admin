@@ -58,9 +58,27 @@ export default function ProductsPage() {
       key: "name",
       header: "Name",
       className: "w-2/6",
-      render: (row) => (
-        <span className="font-semibold text-foreground">{row?.name}</span>
-      ),
+      render: (row) => {
+        const nameEn =
+          typeof row?.name === "object" ? row?.name?.en : row?.name;
+        const nameIt = typeof row?.name === "object" ? row?.name?.it : null;
+
+        return (
+          <div className="flex flex-col">
+            <span className="font-semibold text-foreground">
+              {nameEn || "Untitled Product"}
+            </span>
+            {nameIt && nameIt !== nameEn && (
+              <span className="text-xs text-muted-foreground italic flex items-center gap-1 mt-0.5">
+                <span className="text-[10px] not-italic font-bold px-1 py-0.2 rounded bg-muted/60 text-muted-foreground">
+                  IT
+                </span>
+                {nameIt}
+              </span>
+            )}
+          </div>
+        );
+      },
     },
     {
       key: "sku",
@@ -77,8 +95,14 @@ export default function ProductsPage() {
       header: "Category",
       className: "w-1/6",
       render: (row) => {
-        const cat =
-          typeof row?.categoryId === "object" ? row?.categoryId?.name : "-";
+        let cat = "-";
+        if (typeof row?.categoryId === "object" && row?.categoryId) {
+          const catName = row.categoryId.name;
+          cat =
+            typeof catName === "object"
+              ? catName?.en || catName?.it || "-"
+              : String(catName || "-");
+        }
         return (
           <span className="text-sm font-medium text-foreground">{cat}</span>
         );

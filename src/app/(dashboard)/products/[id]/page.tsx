@@ -14,6 +14,10 @@ export default function ProductDetailPage() {
   const { data, isLoading, isError, error, refetch } = useProductDetail(id);
   const product = data?.data;
 
+  const nameEn =
+    typeof product?.name === "object" ? product?.name?.en : product?.name;
+  const nameIt = typeof product?.name === "object" ? product?.name?.it : null;
+
   return (
     <QueryBoundary
       isLoading={isLoading}
@@ -24,7 +28,7 @@ export default function ProductDetailPage() {
       notFoundMessage="Product not found.">
       <div className="w-full space-y-8 animate-fade-in">
         <PageHeader
-          title={product?.name}
+          title={nameEn || "Product Detail"}
           subtitle="View product information details"
           showBack={true}
           action={{
@@ -48,8 +52,14 @@ export default function ProductDetailPage() {
                     Product Name
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-foreground mt-0.5">
-                    {product?.name}
+                    {nameEn}
                   </h2>
+                  {nameIt && (
+                    <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
+                      <span className="text-xs">🇮🇹</span>
+                      <span className="italic">{nameIt}</span>
+                    </p>
+                  )}
                 </div>
               </div>
               <span
@@ -152,8 +162,13 @@ export default function ProductDetailPage() {
                   </span>
                   <p className="text-base font-semibold text-foreground mt-1 flex items-center gap-2">
                     <Layers className="size-4 text-muted-foreground" />
-                    {typeof product?.categoryId === "object"
-                      ? product.categoryId?.name
+                    {typeof product?.categoryId === "object" &&
+                    product?.categoryId
+                      ? typeof (product.categoryId as any).name === "object"
+                        ? (product.categoryId as any).name?.en ||
+                          (product.categoryId as any).name?.it ||
+                          "-"
+                        : (product.categoryId as any).name || "-"
                       : "-"}
                   </p>
                 </div>

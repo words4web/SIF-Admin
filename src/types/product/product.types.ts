@@ -1,5 +1,7 @@
+import type { UseFormRegister, FieldErrors } from "react-hook-form";
 import { DropdownOption } from "@/components/common/PaginatedDropdown";
 import { EStockStatus } from "@/constants/product.constants";
+import { LocalizedString } from "@/types/category/category.types";
 
 export interface ProductVariant {
   weight: number;
@@ -8,26 +10,26 @@ export interface ProductVariant {
 
 export interface RelatedProductItem {
   _id: string;
-  name: string;
+  name: LocalizedString | string;
   slug?: string;
   sku?: string;
-  description?: string;
+  description?: LocalizedString | string;
   variants?: ProductVariant[];
 }
 
 export interface ProductRow {
   _id: string;
-  name: string;
+  name: LocalizedString;
   slug: string;
   sku: string;
-  description?: string;
+  description?: LocalizedString | null;
   variants: ProductVariant[];
   stock: number;
   stockStatus: EStockStatus;
   categoryId:
     | {
         _id: string;
-        name: string;
+        name: LocalizedString | string;
       }
     | string;
   keywords?: string[];
@@ -39,10 +41,10 @@ export interface ProductRow {
 }
 
 export interface ProductPayload {
-  name: string;
+  name: LocalizedString;
   slug: string;
   sku: string;
-  description?: string;
+  description?: LocalizedString | null;
   variants: ProductVariant[];
   stock?: number;
   stockStatus?: EStockStatus;
@@ -54,10 +56,10 @@ export interface ProductPayload {
 }
 
 export interface ProductFormValues {
-  name: string;
+  name: LocalizedString;
   slug: string;
   sku: string;
-  description?: string;
+  description?: LocalizedString;
   variants: ProductVariant[];
   stock: number;
   stockStatus: EStockStatus;
@@ -75,4 +77,21 @@ export interface ProductFormProps {
   onSubmit: (values: ProductFormValues) => void;
   onDirtyChange?: (isDirty: boolean) => void;
   disabled?: boolean;
+}
+
+export interface ProductLanguagePanelProps {
+  lang: "en" | "it";
+  flag: string;
+  title: string;
+  subtitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  nameRequiredMsg: string;
+  descriptionLabel: string;
+  descriptionPlaceholder: string;
+  descriptionValue: string;
+  register: UseFormRegister<ProductFormValues>;
+  errors: FieldErrors<ProductFormValues>;
+  disabled?: boolean;
+  onNameChange?: (val: string) => void;
 }

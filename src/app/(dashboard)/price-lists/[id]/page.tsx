@@ -39,13 +39,35 @@ export default function PriceListDetailPage() {
     if (!priceList?.products) return [];
     return priceList.products.map((item: any) => {
       const prod = item.productId || {};
+      const prodName =
+        typeof prod?.name === "object"
+          ? prod?.name?.en || prod?.name?.it || "Product"
+          : prod?.name || "Product";
+
+      const itemWeight =
+        item.weight !== undefined && item.weight !== null
+          ? Number(item.weight)
+          : undefined;
+      const matchedVariant =
+        itemWeight && Array.isArray(prod?.variants)
+          ? prod.variants.find((v: any) => Number(v.weight) === itemWeight)
+          : null;
+
+      const basePrice = matchedVariant
+        ? (matchedVariant.price ?? 0)
+        : Array.isArray(prod?.variants) && prod?.variants?.length > 0
+          ? (prod?.variants[0]?.price ?? 0)
+          : (prod?.price ?? 0);
+
       return {
         productId: typeof prod === "string" ? prod : prod._id,
-        name: prod.name || "Product",
+        weight: itemWeight ?? (matchedVariant ? matchedVariant.weight : null),
+        name: prodName,
         pack: prod.pack || "",
-        basePrice: prod.price || 0,
+        basePrice,
         customPrice: item.price || 0,
         images: prod.images,
+        variants: prod.variants,
       };
     });
   }, [priceList?.products]);

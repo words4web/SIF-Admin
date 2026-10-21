@@ -48,7 +48,11 @@ export default function CategoriesPage() {
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
               src={row.image}
-              alt={row.name}
+              alt={
+                typeof row?.name === "object"
+                  ? row?.name?.en || row?.name?.it || "Category"
+                  : row?.name || "Category"
+              }
               className="w-full h-full object-cover"
             />
           ) : (
@@ -62,16 +66,33 @@ export default function CategoriesPage() {
     {
       key: "name",
       header: "Name",
-      render: (row) => (
-        <div className="flex flex-col">
-          <span className="font-semibold text-foreground">{row?.name}</span>
-          {row?.tagline && (
-            <span className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm">
-              {row.tagline}
+      render: (row) => {
+        const nameEn =
+          typeof row?.name === "object" ? row?.name?.en : row?.name;
+        const nameIt = typeof row?.name === "object" ? row?.name?.it : null;
+        const taglineText =
+          typeof row?.tagline === "object"
+            ? row?.tagline?.en || row?.tagline?.it
+            : row?.tagline;
+
+        return (
+          <div className="flex flex-col">
+            <span className="font-semibold text-foreground flex items-center gap-1.5">
+              {nameEn || "—"}
+              {nameIt && nameIt !== nameEn && (
+                <span className="text-xs font-normal text-muted-foreground">
+                  ({nameIt})
+                </span>
+              )}
             </span>
-          )}
-        </div>
-      ),
+            {taglineText && (
+              <span className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm">
+                {taglineText}
+              </span>
+            )}
+          </div>
+        );
+      },
     },
     {
       key: "slug",

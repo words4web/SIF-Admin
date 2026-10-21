@@ -10,6 +10,7 @@ import { ProductFormValues } from "@/types/product/product.types";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ConfirmModal } from "@/components/common/ConfirmModal";
 import { uploadService } from "@/services/upload/upload.service";
+import { cleanLocalizedString } from "@/utils/localization";
 
 export default function NewProductPage() {
   const router = useRouter();
@@ -42,7 +43,15 @@ export default function NewProductPage() {
       );
 
       createProduct(
-        { ...pendingValues, images: finalImages },
+        {
+          ...pendingValues,
+          name: {
+            en: pendingValues.name?.en?.trim() || "",
+            it: pendingValues.name?.it?.trim() || "",
+          },
+          description: cleanLocalizedString(pendingValues.description),
+          images: finalImages,
+        },
         {
           onSuccess: () => {
             setShowCreateModal(false);

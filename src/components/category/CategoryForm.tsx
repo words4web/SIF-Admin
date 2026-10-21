@@ -1,10 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { Image as ImageIcon, Globe } from "lucide-react";
+import {
+  Image as ImageIcon,
+  Globe,
+  Languages,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 import { Input } from "@/components/common/Input";
-import { Textarea } from "@/components/common/Textarea";
 import { Loader } from "@/components/common/Loader";
 import { ImageUploader } from "@/components/common/ImageUploader";
 import { FormSection } from "@/components/common/FormSection";
@@ -15,12 +20,42 @@ import {
 } from "@/types/category/category.types";
 import { toSlug } from "@/lib/utils";
 
+import { CategoryLanguagePanel } from "./CategoryLanguagePanel";
+
+type SupportedLang = "en" | "it";
+
 export function CategoryForm({
   defaultValues,
   onSubmit,
   isLoading,
   submitLabel = "Save Category",
 }: CategoryFormProps) {
+  const [activeLang, setActiveLang] = useState<SupportedLang>("en");
+
+  const initialName =
+    typeof defaultValues?.name === "object"
+      ? defaultValues.name
+      : {
+          en: (defaultValues?.name as any) || "",
+          it: (defaultValues?.name as any) || "",
+        };
+
+  const initialTagline =
+    typeof defaultValues?.tagline === "object"
+      ? defaultValues.tagline
+      : {
+          en: (defaultValues?.tagline as any) || "",
+          it: (defaultValues?.tagline as any) || "",
+        };
+
+  const initialDescription =
+    typeof defaultValues?.description === "object"
+      ? defaultValues.description
+      : {
+          en: (defaultValues?.description as any) || "",
+          it: (defaultValues?.description as any) || "",
+        };
+
   const {
     register,
     handleSubmit,
@@ -30,30 +65,36 @@ export function CategoryForm({
     formState: { errors },
   } = useForm<CategoryFormValues>({
     defaultValues: {
-      name: "",
-      slug: "",
-      image: [],
-      tagline: "",
-      description: "",
-      isActive: true,
-      ...defaultValues,
+      name: initialName,
+      slug: defaultValues?.slug || "",
+      image: defaultValues?.image || [],
+      tagline: initialTagline,
+      description: initialDescription,
+      isActive: defaultValues?.isActive ?? true,
     },
   });
 
-  const nameValue = watch("name");
-  const taglineValue = watch("tagline") || "";
-  const descriptionValue = watch("description") || "";
+  const nameEnValue = watch("name.en") || "";
+  const nameItValue = watch("name.it") || "";
+  const taglineEnValue = watch("tagline.en") || "";
+  const taglineItValue = watch("tagline.it") || "";
+  const descriptionEnValue = watch("description.en") || "";
+  const descriptionItValue = watch("description.it") || "";
   const isEditing = !!defaultValues?.slug;
 
+  const isEnComplete = Boolean(nameEnValue.trim());
+  const isItComplete = Boolean(nameItValue.trim());
+
   useEffect(() => {
-    if (!isEditing) {
-      setValue("slug", toSlug(nameValue || ""), { shouldValidate: false });
+    if (!isEditing && nameEnValue) {
+      setValue("slug", toSlug(nameEnValue), { shouldValidate: false });
     }
-  }, [nameValue, isEditing, setValue]);
+  }, [nameEnValue, isEditing, setValue]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        {/* Left Column: Media & Visibility */}
         <div className="lg:col-span-5 space-y-8">
           <FormSection
             title="Visual Identity"
@@ -110,101 +151,151 @@ export function CategoryForm({
               {...register("isActive")}
             />
           </FormSection>
+
+          {/* URL Slug */}
+          <FormSection
+            title="URL Routing"
+            description="Permanent web URL slug for this category">
+            <div className="space-y-2">
+              <Input
+                id="slug"
+                label="Slug *"
+                placeholder="e.g. flours-atta"
+                className="h-13 text-sm px-4 font-mono bg-muted/30"
+                disabled={isLoading}
+                error={errors.slug?.message}
+                {...register("slug", {
+                  required: "Slug is required",
+                  pattern: {
+                    value: /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+                    message:
+                      "Slug must be lowercase alphanumeric with hyphens only",
+                  },
+                })}
+              />
+              <span className="text-[11px] text-muted-foreground flex items-center gap-1">
+                <Globe className="size-3" /> Auto-generated from English name
+              </span>
+            </div>
+          </FormSection>
         </div>
 
+        {/* Right Column: Tabbed Language Switcher Details */}
         <div className="lg:col-span-7 space-y-8">
           <FormSection
-            title="Category Details"
-            description="Name, URL slug, and brand storytelling">
+            title="Localized Content"
+            description="Manage category content across English and Italian markets">
             <div className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <Input
-                  id="name"
-                  label="Category Name *"
-                  placeholder="e.g. Flours & Atta"
-                  className="h-13 text-base px-4"
-                  disabled={isLoading}
-                  error={errors.name?.message}
-                  {...register("name", {
-                    required: "Category name is required",
-                  })}
-                />
+              {/* Language Navigation Tabs */}
+              <div className="flex items-center justify-between p-1.5 rounded-2xl bg-muted/50 border border-border/80">
+                <div className="flex items-center gap-1.5 w-full sm:w-auto">
+                  <button
+                    type="button"
+                    onClick={() => setActiveLang("en")}
+                    className={`flex-1 sm:flex-initial flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer ${
+                      activeLang === "en"
+                        ? "bg-card text-foreground shadow-sm border border-border"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}>
+                    <span className="text-base">🇬🇧</span>
+                    <span>English</span>
+                    {isEnComplete ? (
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-500/10 text-emerald-600">
+                        <CheckCircle2 className="size-3" /> Ready
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/10 text-amber-600">
+                        <AlertCircle className="size-3" /> Required
+                      </span>
+                    )}
+                  </button>
 
-                <div className="space-y-1.5">
-                  <Input
-                    id="slug"
-                    label="Slug *"
-                    placeholder="e.g. flours-atta"
-                    className="h-13 text-sm px-4 font-mono bg-muted/30"
-                    disabled={isLoading}
-                    error={errors.slug?.message}
-                    {...register("slug", {
-                      required: "Slug is required",
-                      pattern: {
-                        value: /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
-                        message:
-                          "Slug must be lowercase alphanumeric with hyphens only",
-                      },
-                    })}
-                  />
-                  <span className="text-[11px] text-muted-foreground flex items-center gap-1">
-                    <Globe className="size-3" /> Auto-generated slug
-                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveLang("it")}
+                    className={`flex-1 sm:flex-initial flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer ${
+                      activeLang === "it"
+                        ? "bg-card text-foreground shadow-sm border border-border"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}>
+                    <span className="text-base">🇮🇹</span>
+                    <span>Italian</span>
+                    {isItComplete ? (
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-500/10 text-emerald-600">
+                        <CheckCircle2 className="size-3" /> Ready
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/10 text-amber-600">
+                        <AlertCircle className="size-3" /> Required
+                      </span>
+                    )}
+                  </button>
+                </div>
+
+                <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground pr-2 font-medium">
+                  <Languages className="size-3.5 text-primary" />
+                  <span>Dual Locale</span>
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="tagline"
-                    className="text-sm font-bold text-foreground">
-                    Tagline / Short Hook
-                  </label>
-                  <span className="text-xs text-muted-foreground font-mono">
-                    {taglineValue.length}/150
-                  </span>
-                </div>
-                <Input
-                  id="tagline"
-                  placeholder="e.g. Stone-ground, pure & wholesome flours for everyday perfection"
-                  className="h-13 text-base px-4"
-                  disabled={isLoading}
-                  error={errors.tagline?.message}
-                  {...register("tagline", {
-                    maxLength: {
-                      value: 150,
-                      message: "Tagline cannot exceed 150 characters",
-                    },
-                  })}
+              {/* Tab 1: English Panel */}
+              <div
+                className={`space-y-6 animate-fade-in ${activeLang === "en" ? "block" : "hidden"}`}>
+                <CategoryLanguagePanel
+                  lang="en"
+                  flag="🇬🇧"
+                  title="English Content"
+                  subtitle="Primary catalogue presentation & default fallback"
+                  nameLabel="Category Name (English) *"
+                  namePlaceholder="e.g. Spices & Seasonings"
+                  nameRequiredMsg="English category name is required"
+                  taglineLabel="Tagline / Short Hook (English)"
+                  taglinePlaceholder="e.g. Asia's finest spices, whole seeds & pure blends"
+                  taglineMaxMsg="Tagline cannot exceed 150 characters"
+                  descriptionLabel="Description (English)"
+                  descriptionPlaceholder="Detailed English description for the catalogue banner and storytelling..."
+                  descriptionMaxMsg="Description cannot exceed 1000 characters"
+                  taglineValue={taglineEnValue}
+                  descriptionValue={descriptionEnValue}
+                  register={register}
+                  errors={errors}
+                  isLoading={isLoading}
                 />
               </div>
 
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="description"
-                    className="text-sm font-bold text-foreground">
-                    Description & Story
-                  </label>
-                  <span className="text-xs text-muted-foreground font-mono">
-                    {descriptionValue.length}/1000
-                  </span>
-                </div>
-                <Textarea
-                  id="description"
-                  rows={4}
-                  placeholder="Enter a rich description, sourcing origins, or customer-facing story..."
-                  className="text-base p-4"
-                  disabled={isLoading}
-                  error={errors.description?.message}
-                  {...register("description", {
-                    maxLength: {
-                      value: 1000,
-                      message: "Description cannot exceed 1000 characters",
-                    },
-                  })}
+              {/* Tab 2: Italian Panel */}
+              <div
+                className={`space-y-6 animate-fade-in ${activeLang === "it" ? "block" : "hidden"}`}>
+                <CategoryLanguagePanel
+                  lang="it"
+                  flag="🇮🇹"
+                  title="Contenuto in Italiano"
+                  subtitle="Visualizzato ai clienti durante la navigazione in lingua italiana"
+                  nameLabel="Nome Categoria (Italiano) *"
+                  namePlaceholder="es. Spezie e Condimenti"
+                  nameRequiredMsg="Il nome della categoria in italiano è obbligatorio"
+                  taglineLabel="Slogan / Tagline (Italiano)"
+                  taglinePlaceholder="es. Le migliori spezie dell'Asia, semi interi e miscele pure"
+                  taglineMaxMsg="Lo slogan non può superare i 150 caratteri"
+                  descriptionLabel="Descrizione (Italiano)"
+                  descriptionPlaceholder="Descrizione dettagliata in italiano per il catalogo online..."
+                  descriptionMaxMsg="La descrizione non può superare i 1000 caratteri"
+                  taglineValue={taglineItValue}
+                  descriptionValue={descriptionItValue}
+                  register={register}
+                  errors={errors}
+                  isLoading={isLoading}
                 />
               </div>
+
+              {(errors.name?.en || errors.name?.it) && (
+                <div className="p-3.5 rounded-xl bg-white border border-rose-300 dark:border-rose-900/50 shadow-sm flex items-center gap-2.5 text-sm font-semibold text-rose-600">
+                  <AlertCircle className="size-4.5 shrink-0 text-rose-500" />
+                  <span>
+                    Please ensure required names are filled for both languages.
+                  </span>
+                </div>
+              )}
             </div>
           </FormSection>
 

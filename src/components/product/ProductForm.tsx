@@ -25,6 +25,10 @@ import {
   STOCK_STATUS_OPTIONS,
 } from "@/constants/product.constants";
 import { toSlug } from "@/lib/utils";
+import { CheckCircle2, AlertCircle, Languages } from "lucide-react";
+import { ProductLanguagePanel } from "./ProductLanguagePanel";
+
+type SupportedLang = "en" | "it";
 
 export function ProductForm({
   defaultValues,
@@ -34,6 +38,24 @@ export function ProductForm({
   onDirtyChange,
   disabled = false,
 }: ProductFormProps) {
+  const [activeLang, setActiveLang] = useState<SupportedLang>("en");
+
+  const initialName =
+    typeof defaultValues?.name === "object"
+      ? defaultValues.name
+      : {
+          en: (defaultValues?.name as any) || "",
+          it: (defaultValues?.name as any) || "",
+        };
+
+  const initialDescription =
+    typeof defaultValues?.description === "object"
+      ? defaultValues.description
+      : {
+          en: (defaultValues?.description as any) || "",
+          it: (defaultValues?.description as any) || "",
+        };
+
   const {
     register,
     handleSubmit,
@@ -46,10 +68,8 @@ export function ProductForm({
     formState: { errors, isDirty },
   } = useForm<ProductFormValues>({
     defaultValues: {
-      name: "",
       slug: "",
       sku: "",
-      description: "",
       variants: [{ weight: 0, price: 0 }],
       stock: 1,
       stockStatus: EStockStatus.IN_STOCK,
@@ -59,6 +79,8 @@ export function ProductForm({
       relatedProducts: [],
       isActive: true,
       ...defaultValues,
+      name: initialName,
+      description: initialDescription,
     },
   });
 
@@ -91,6 +113,18 @@ export function ProductForm({
   useEffect(() => {
     onDirtyChange?.(isDirty);
   }, [isDirty, onDirtyChange]);
+
+  const isEditing = !!defaultValues?.slug;
+  const nameEnValue = watch("name.en") || "";
+  const nameItValue = watch("name.it") || "";
+  const descriptionEnValue = watch("description.en") || "";
+  const descriptionItValue = watch("description.it") || "";
+
+  useEffect(() => {
+    if (!isEditing && nameEnValue) {
+      setValue("slug", toSlug(nameEnValue), { shouldValidate: false });
+    }
+  }, [nameEnValue, isEditing, setValue]);
 
   const { data: categoriesData, isLoading: isLoadingCategories } =
     useCategories({
@@ -131,30 +165,123 @@ export function ProductForm({
     onSubmit(values);
   };
 
+  const isEnComplete = Boolean(nameEnValue.trim());
+  const isItComplete = Boolean(nameItValue.trim());
+
   return (
     <form
       id="product-form"
       onSubmit={handleSubmit(handleFormSubmit)}
       className="space-y-10">
-      <FormSection title="Basic Information">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Input
-            id="name"
-            label="Product Name *"
-            placeholder="e.g. Badam Milk Powder Mix"
-            className="h-12 text-base px-4"
-            disabled={disabled}
-            error={errors.name?.message}
-            {...register("name", {
-              required: "Name is required",
-              onChange: (e) => {
-                setValue("slug", toSlug(e.target.value), {
-                  shouldValidate: false,
-                });
-              },
-            })}
-          />
+      <FormSection
+        title="Localized Content"
+        description="Manage product name and description across English and Italian markets">
+        <div className="space-y-6">
+          <div className="flex items-center justify-between p-1.5 rounded-2xl bg-muted/50 border border-border/80">
+            <div className="flex items-center gap-1.5 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => setActiveLang("en")}
+                className={`flex-1 sm:flex-initial flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer ${
+                  activeLang === "en"
+                    ? "bg-card text-foreground shadow-sm border border-border"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}>
+                <span className="text-base">🇬🇧</span>
+                <span>English</span>
+                {isEnComplete ? (
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-500/10 text-emerald-600">
+                    <CheckCircle2 className="size-3" /> Ready
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/10 text-amber-600">
+                    <AlertCircle className="size-3" /> Required
+                  </span>
+                )}
+              </button>
 
+              <button
+                type="button"
+                onClick={() => setActiveLang("it")}
+                className={`flex-1 sm:flex-initial flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer ${
+                  activeLang === "it"
+                    ? "bg-card text-foreground shadow-sm border border-border"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}>
+                <span className="text-base">🇮🇹</span>
+                <span>Italian</span>
+                {isItComplete ? (
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-500/10 text-emerald-600">
+                    <CheckCircle2 className="size-3" /> Ready
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/10 text-amber-600">
+                    <AlertCircle className="size-3" /> Required
+                  </span>
+                )}
+              </button>
+            </div>
+
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground pr-2 font-medium">
+              <Languages className="size-3.5 text-primary" />
+              <span>Dual Locale</span>
+            </div>
+          </div>
+
+          <div
+            className={`space-y-6 animate-fade-in ${activeLang === "en" ? "block" : "hidden"}`}>
+            <ProductLanguagePanel
+              lang="en"
+              flag="🇬🇧"
+              title="English Content"
+              subtitle="Primary presentation and default catalogue fallback"
+              nameLabel="Product Name (English) *"
+              namePlaceholder="e.g. Badam Milk Powder Mix"
+              nameRequiredMsg="English product name is required"
+              descriptionLabel="Description (English)"
+              descriptionPlaceholder="Enter a detailed product description, ingredients, or usage instructions in English..."
+              descriptionValue={descriptionEnValue}
+              register={register}
+              errors={errors}
+              disabled={disabled}
+              onNameChange={(val) => {
+                setValue("slug", toSlug(val), { shouldValidate: false });
+              }}
+            />
+          </div>
+
+          <div
+            className={`space-y-6 animate-fade-in ${activeLang === "it" ? "block" : "hidden"}`}>
+            <ProductLanguagePanel
+              lang="it"
+              flag="🇮🇹"
+              title="Contenuto in Italiano"
+              subtitle="Visualizzato ai clienti durante la navigazione in lingua italiana"
+              nameLabel="Nome Prodotto (Italiano) *"
+              namePlaceholder="es. Preparato per Bevanda alle Mandorle"
+              nameRequiredMsg="Il nome del prodotto in italiano è obbligatorio"
+              descriptionLabel="Descrizione (Italiano)"
+              descriptionPlaceholder="Inserisci la descrizione dettagliata del prodotto, ingredienti o istruzioni in italiano..."
+              descriptionValue={descriptionItValue}
+              register={register}
+              errors={errors}
+              disabled={disabled}
+            />
+          </div>
+
+          {(errors.name?.en || errors.name?.it) && (
+            <div className="p-3.5 rounded-xl bg-white border border-rose-300 dark:border-rose-900/50 shadow-sm flex items-center gap-2.5 text-sm font-semibold text-rose-600">
+              <AlertCircle className="size-4.5 shrink-0 text-rose-500" />
+              <span>
+                Please ensure required names are filled for both languages.
+              </span>
+            </div>
+          )}
+        </div>
+      </FormSection>
+
+      <FormSection title="Organization & Classification">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {isLoadingCategories ? (
             <div className="flex flex-col gap-1.5">
               <span className="text-sm font-bold text-foreground">
@@ -182,16 +309,17 @@ export function ProductForm({
                     { value: "", label: "Select a Category" },
                     ...(categories?.map((c: any) => ({
                       value: String(c._id),
-                      label: c.name,
+                      label:
+                        typeof c?.name === "object"
+                          ? c?.name?.en || c?.name?.it
+                          : c?.name,
                     })) || []),
                   ]}
                 />
               )}
             />
           )}
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Input
             id="sku"
             label="SKU Code *"
@@ -204,7 +332,9 @@ export function ProductForm({
               setValueAs: (v) => (v ? v.trim().toUpperCase() : ""),
             })}
           />
+        </div>
 
+        <div className="mt-6">
           <Input
             id="slug"
             label="Slug *"
@@ -445,16 +575,6 @@ export function ProductForm({
             )}
           />
         </div>
-      </FormSection>
-
-      <FormSection title="Description">
-        <Textarea
-          id="description"
-          rows={5}
-          placeholder="Enter a detailed product description, ingredients, or usage instructions..."
-          disabled={disabled}
-          {...register("description")}
-        />
       </FormSection>
     </form>
   );

@@ -15,6 +15,24 @@ export default function CategoryDetailPage() {
 
   const category = data?.data;
 
+  const nameEn =
+    typeof category?.name === "object" ? category?.name?.en : category?.name;
+  const nameIt = typeof category?.name === "object" ? category?.name?.it : null;
+  const taglineEn =
+    typeof category?.tagline === "object"
+      ? category?.tagline?.en
+      : category?.tagline;
+  const taglineIt =
+    typeof category?.tagline === "object" ? category?.tagline?.it : null;
+  const descEn =
+    typeof category?.description === "object"
+      ? category?.description?.en
+      : category?.description;
+  const descIt =
+    typeof category?.description === "object"
+      ? category?.description?.it
+      : null;
+
   return (
     <QueryBoundary
       isLoading={isLoading}
@@ -25,7 +43,7 @@ export default function CategoryDetailPage() {
       notFoundMessage="Category not found.">
       <div className="w-full space-y-8 animate-fade-in">
         <PageHeader
-          title={category?.name}
+          title={nameEn || "Category Detail"}
           subtitle="View product category information"
           backHref={ROUTES.CATEGORIES.ROOT}
           action={{
@@ -46,7 +64,7 @@ export default function CategoryDetailPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={category.image}
-                        alt={category.name}
+                        alt={nameEn || "Category"}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -60,12 +78,22 @@ export default function CategoryDetailPage() {
                       Product Category
                     </span>
                     <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-foreground mt-0.5">
-                      {category?.name}
+                      {nameEn}
                     </h2>
-                    {category?.tagline && (
-                      <p className="text-sm font-medium text-muted-foreground mt-1 italic">
-                        &ldquo;{category.tagline}&rdquo;
+                    {nameIt && nameIt !== nameEn && (
+                      <p className="text-sm font-semibold text-muted-foreground">
+                        🇮🇹 {nameIt}
                       </p>
+                    )}
+                    {(taglineEn || taglineIt) && (
+                      <div className="mt-1 space-y-0.5 text-sm font-medium text-muted-foreground italic">
+                        {taglineEn && <p>&ldquo;{taglineEn}&rdquo;</p>}
+                        {taglineIt && taglineIt !== taglineEn && (
+                          <p className="text-xs">
+                            🇮🇹 &ldquo;{taglineIt}&rdquo;
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
@@ -89,14 +117,27 @@ export default function CategoryDetailPage() {
                   </div>
                 </div>
 
-                {category?.description && (
-                  <div className="flex flex-col gap-1.5 pt-2">
+                {(descEn || descIt) && (
+                  <div className="flex flex-col gap-3 pt-2">
                     <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                       Description / Overview
                     </span>
-                    <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/30 text-foreground leading-relaxed">
-                      {category.description}
-                    </div>
+                    {descEn && (
+                      <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/30 text-foreground leading-relaxed">
+                        <span className="font-bold text-xs text-muted-foreground uppercase block mb-1">
+                          🇬🇧 English
+                        </span>
+                        {descEn}
+                      </div>
+                    )}
+                    {descIt && (
+                      <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/30 text-foreground leading-relaxed">
+                        <span className="font-bold text-xs text-muted-foreground uppercase block mb-1">
+                          🇮🇹 Italian
+                        </span>
+                        {descIt}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

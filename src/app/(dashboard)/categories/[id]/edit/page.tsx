@@ -14,6 +14,8 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { ROUTES } from "@/constants/routes";
 import { uploadService } from "@/services/upload/upload.service";
 
+import { cleanLocalizedString } from "@/utils/localization";
+
 export default function EditCategoryPage() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
@@ -41,11 +43,14 @@ export default function EditCategoryPage() {
         {
           id,
           payload: {
-            name: values.name,
+            name: {
+              en: values.name?.en?.trim() || "",
+              it: values.name?.it?.trim() || "",
+            },
             slug: values.slug,
             image: finalImageUrl,
-            tagline: values.tagline?.trim() || null,
-            description: values.description?.trim() || null,
+            tagline: cleanLocalizedString(values.tagline),
+            description: cleanLocalizedString(values.description),
             isActive: values.isActive,
           },
         },
@@ -62,6 +67,11 @@ export default function EditCategoryPage() {
 
   const isBusy = isPending || isUploading;
 
+  const categoryNameDisplay =
+    typeof category?.name === "object"
+      ? category?.name?.en || category?.name?.it
+      : category?.name;
+
   return (
     <QueryBoundary
       isLoading={isLoading}
@@ -72,7 +82,7 @@ export default function EditCategoryPage() {
       notFoundMessage="Category not found.">
       <PageHeader
         title="Edit Category"
-        subtitle={category?.name}
+        subtitle={categoryNameDisplay}
         backHref={ROUTES.CATEGORIES.DETAIL(id)}
       />
       <div className="flex flex-col items-center justify-center">
@@ -80,11 +90,26 @@ export default function EditCategoryPage() {
           <div className="rounded-3xl border border-border bg-card p-8 sm:p-10 lg:p-12 shadow-md">
             <CategoryForm
               defaultValues={{
-                name: category?.name,
+                name:
+                  typeof category?.name === "object"
+                    ? category.name
+                    : { en: category?.name || "", it: category?.name || "" },
                 slug: category?.slug,
                 image: category?.image ? [category.image] : [],
-                tagline: category?.tagline || "",
-                description: category?.description || "",
+                tagline:
+                  typeof category?.tagline === "object"
+                    ? category.tagline
+                    : {
+                        en: category?.tagline || "",
+                        it: category?.tagline || "",
+                      },
+                description:
+                  typeof category?.description === "object"
+                    ? category.description
+                    : {
+                        en: category?.description || "",
+                        it: category?.description || "",
+                      },
                 isActive: category?.isActive,
               }}
               onSubmit={handleSubmit}
