@@ -150,7 +150,10 @@ export function ProductForm({
         ?.filter((p: any) => p?._id !== currentProductId)
         ?.map((p: any) => ({
           value: p?._id,
-          label: p?.name,
+          label:
+            typeof p?.name === "object"
+              ? p?.name?.en || p?.name?.it || "Product"
+              : p?.name || "Product",
         }));
 
       return {

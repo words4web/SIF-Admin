@@ -284,8 +284,14 @@ This document provides a comprehensive overview of the **Shelly Indian Foods Adm
 
 ---
 
-## 12. Italian Localization & Format Validation
+## 12. Multilingual Localization & Format Validation
 
+- **Safe Localized String Resolution**:
+  - Products and Categories persist bilingual data schemas (`{ en: string, it: string }` for `name`, `description`, and `tagline`).
+  - To prevent React runtime rendering errors (`Objects are not valid as a React child`), all display components, modal headers, image `alt` tags, and selector dropdowns strictly resolve localized objects into strings (`val?.en || val?.it || val`).
+  - Detail pages (`/products/[id]`, `/categories/[id]`) cleanly separate and display bilingual descriptions and names into distinct English (`🇬🇧`) and Italian (`🇮🇹`) sections.
+- **Simplified Admin Tables**:
+  - The main data tables (`/products`, `/categories`) display clean English names directly without secondary Italian subtitle badges or visual clutter.
 - **Phone Number Validation**:
   - Customer profile, saved addresses, checkout forms, and salesman/admin order placement strictly validate Italian landline and mobile numbers (`+39...`, `3[0-9]{8,9}`, `0[0-9]{5,10}`).
 - **Invoice & Delivery Note Documents**:

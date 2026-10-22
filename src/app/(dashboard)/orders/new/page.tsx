@@ -64,11 +64,16 @@ export default function CreateOrderPage() {
           ? product.images[0]
           : undefined;
 
+      const prodName =
+        typeof product?.name === "object"
+          ? product?.name?.en || product?.name?.it || "Product"
+          : String(product?.name || "Product");
+
       return [
         ...prev,
         {
           productId: product._id,
-          name: product.name,
+          name: prodName,
           price,
           weight,
           pack: product.pack,

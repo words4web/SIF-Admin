@@ -164,7 +164,13 @@ export default function EditProductPage() {
   const initialRelatedOptions = Array.isArray(product?.relatedProducts)
     ? product?.relatedProducts
         ?.filter((p: any) => typeof p === "object" && p?._id && p?.name)
-        ?.map((p: any) => ({ value: p._id, label: p.name }))
+        ?.map((p: any) => ({
+          value: p._id,
+          label:
+            typeof p.name === "object"
+              ? p.name.en || p.name.it || "Product"
+              : p.name || "Product",
+        }))
     : [];
 
   const isBusy = isPending || isUploading;
@@ -179,7 +185,11 @@ export default function EditProductPage() {
       notFoundMessage="Product not found.">
       <PageHeader
         title="Edit Product"
-        subtitle={product?.name}
+        subtitle={
+          typeof product?.name === "object"
+            ? product?.name?.en || product?.name?.it || "Product"
+            : product?.name
+        }
         onBackClick={handleBackClick}
         action={{
           label: "Save Changes",

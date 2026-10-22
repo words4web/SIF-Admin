@@ -15,8 +15,23 @@ export default function ProductDetailPage() {
   const product = data?.data;
 
   const nameEn =
-    typeof product?.name === "object" ? product?.name?.en : product?.name;
-  const nameIt = typeof product?.name === "object" ? product?.name?.it : null;
+    typeof product?.name === "object"
+      ? product?.name?.en || product?.name?.it
+      : product?.name;
+  const nameIt =
+    typeof product?.name === "object" && product?.name?.it !== nameEn
+      ? product?.name?.it
+      : null;
+
+  const descEn =
+    typeof product?.description === "object"
+      ? product?.description?.en || product?.description?.it
+      : product?.description;
+  const descIt =
+    typeof product?.description === "object" &&
+    product?.description?.it !== descEn
+      ? product?.description?.it
+      : null;
 
   return (
     <QueryBoundary
@@ -90,7 +105,7 @@ export default function ProductDetailPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={imgUrl}
-                        alt={`${product?.name} Image ${idx + 1}`}
+                        alt={`${nameEn || "Product"} Image ${idx + 1}`}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </a>
@@ -113,14 +128,29 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {product?.description && (
-                <div className="flex flex-col gap-1.5 pt-2">
+              {(descEn || descIt) && (
+                <div className="flex flex-col gap-3 pt-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     Description
                   </span>
-                  <p className="text-sm font-normal text-foreground bg-muted/40 p-4 rounded-xl border border-border/30 whitespace-pre-wrap">
-                    {product.description}
-                  </p>
+                  {descEn && (
+                    <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/30 text-foreground leading-relaxed whitespace-pre-wrap">
+                      {descIt && (
+                        <span className="font-bold text-xs text-muted-foreground uppercase block mb-1">
+                          🇬🇧 English
+                        </span>
+                      )}
+                      {descEn}
+                    </div>
+                  )}
+                  {descIt && (
+                    <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/30 text-foreground leading-relaxed whitespace-pre-wrap">
+                      <span className="font-bold text-xs text-muted-foreground uppercase block mb-1">
+                        🇮🇹 Italian
+                      </span>
+                      {descIt}
+                    </div>
+                  )}
                 </div>
               )}
 

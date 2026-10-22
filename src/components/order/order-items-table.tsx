@@ -34,7 +34,11 @@ export function OrderItemsTable({
             </div>
             <div className="flex items-center gap-2 flex-wrap">
               <p className="font-semibold text-foreground">
-                {row?.productId?.name || "Deleted Product"}
+                {typeof row?.productId?.name === "object"
+                  ? row?.productId?.name?.en ||
+                    row?.productId?.name?.it ||
+                    "Product"
+                  : row?.productId?.name || "Deleted Product"}
               </p>
               {row?.weight ? (
                 <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-extrabold bg-primary/10 text-primary border border-primary/20">

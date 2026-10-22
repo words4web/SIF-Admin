@@ -170,7 +170,9 @@ export function ProductSelector({
 
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-bold text-foreground truncate">
-                      {prod.name}
+                      {typeof prod?.name === "object"
+                        ? prod?.name?.en || prod?.name?.it || "Product"
+                        : prod?.name || "Product"}
                     </p>
                     <p className="text-[11px] font-bold text-primary mt-0.5">
                       {formatPrice(activePrice)}
@@ -279,7 +281,11 @@ export function ProductSelector({
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
                       <p className="font-semibold text-foreground truncate">
-                        {item.name}
+                        {typeof item?.name === "object"
+                          ? (item.name as any)?.en ||
+                            (item.name as any)?.it ||
+                            "Product"
+                          : item.name}
                       </p>
                       {item.weight ? (
                         <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-primary/10 text-primary border border-primary/20">

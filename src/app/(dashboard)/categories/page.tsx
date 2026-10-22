@@ -68,8 +68,9 @@ export default function CategoriesPage() {
       header: "Name",
       render: (row) => {
         const nameEn =
-          typeof row?.name === "object" ? row?.name?.en : row?.name;
-        const nameIt = typeof row?.name === "object" ? row?.name?.it : null;
+          typeof row?.name === "object"
+            ? row?.name?.en || row?.name?.it
+            : row?.name;
         const taglineText =
           typeof row?.tagline === "object"
             ? row?.tagline?.en || row?.tagline?.it
@@ -77,13 +78,8 @@ export default function CategoriesPage() {
 
         return (
           <div className="flex flex-col">
-            <span className="font-semibold text-foreground flex items-center gap-1.5">
+            <span className="font-semibold text-foreground">
               {nameEn || "—"}
-              {nameIt && nameIt !== nameEn && (
-                <span className="text-xs font-normal text-muted-foreground">
-                  ({nameIt})
-                </span>
-              )}
             </span>
             {taglineText && (
               <span className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm">
@@ -209,7 +205,13 @@ export default function CategoriesPage() {
 
       <ConfirmModal
         isOpen={!!pendingDelete}
-        title={`Delete "${pendingDelete?.name}"?`}
+        title={`Delete "${
+          typeof pendingDelete?.name === "object"
+            ? (pendingDelete?.name as any)?.en ||
+              (pendingDelete?.name as any)?.it ||
+              "Category"
+            : pendingDelete?.name || "Category"
+        }"?`}
         description="This action cannot be undone. The category will be permanently removed."
         confirmText="Delete"
         variant="destructive"

@@ -60,23 +60,14 @@ export default function ProductsPage() {
       className: "w-2/6",
       render: (row) => {
         const nameEn =
-          typeof row?.name === "object" ? row?.name?.en : row?.name;
-        const nameIt = typeof row?.name === "object" ? row?.name?.it : null;
+          typeof row?.name === "object"
+            ? row?.name?.en || row?.name?.it
+            : row?.name;
 
         return (
-          <div className="flex flex-col">
-            <span className="font-semibold text-foreground">
-              {nameEn || "Untitled Product"}
-            </span>
-            {nameIt && nameIt !== nameEn && (
-              <span className="text-xs text-muted-foreground italic flex items-center gap-1 mt-0.5">
-                <span className="text-[10px] not-italic font-bold px-1 py-0.2 rounded bg-muted/60 text-muted-foreground">
-                  IT
-                </span>
-                {nameIt}
-              </span>
-            )}
-          </div>
+          <span className="font-semibold text-foreground">
+            {nameEn || "Untitled Product"}
+          </span>
         );
       },
     },
@@ -262,7 +253,13 @@ export default function ProductsPage() {
 
       <ConfirmModal
         isOpen={!!pendingDelete}
-        title={`Delete "${pendingDelete?.name}"?`}
+        title={`Delete "${
+          typeof pendingDelete?.name === "object"
+            ? (pendingDelete?.name as any)?.en ||
+              (pendingDelete?.name as any)?.it ||
+              "Product"
+            : pendingDelete?.name || "Product"
+        }"?`}
         description="This action cannot be undone. The product will be permanently removed."
         confirmText="Delete"
         variant="destructive"
