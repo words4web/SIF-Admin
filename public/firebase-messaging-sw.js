@@ -14,12 +14,12 @@ self.addEventListener("activate", (event) => {
 });
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDhfv3ac24ebuP6oB0UvmUJSqA2ssUq538",
-  authDomain: "indian-supplies.firebaseapp.com",
-  projectId: "indian-supplies",
-  storageBucket: "indian-supplies.firebasestorage.app",
-  messagingSenderId: "851086484761",
-  appId: "1:851086484761:web:8a1befadd85b3f576d9188",
+  apiKey: "AIzaSyDint7mEVD8MRT4wB5iWtvjNNh0QJSYG2U",
+  authDomain: "shelly-foods.firebaseapp.com",
+  projectId: "shelly-foods",
+  storageBucket: "shelly-foods.firebasestorage.app",
+  messagingSenderId: "1082609797348",
+  appId: "1:1082609797348:web:4b72e9f2d72f07ced484f1",
 });
 
 const messaging = firebase.messaging();

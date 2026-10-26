@@ -143,10 +143,10 @@ export default function EditProductPage() {
                 : Number(v?.weight) || 0,
             price:
               typeof v?.price === "number" ? v?.price : Number(v?.price) || 0,
+            stock:
+              typeof v?.stock === "number" ? v?.stock : Number(v?.stock) || 0,
           }))
-        : [{ weight: 0, price: 0 }],
-    stock: product?.stock ?? 0,
-    stockStatus: product?.stockStatus || undefined,
+        : [{ weight: 0, price: 0, stock: 1 }],
     categoryId:
       typeof product?.categoryId === "object"
         ? product?.categoryId?._id

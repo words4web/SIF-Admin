@@ -128,20 +128,22 @@ export default function ProductsPage() {
       header: "Stock",
       className: "w-28",
       render: (row) => {
-        const isOutOfStock =
-          row?.stockStatus === "OUT_OF_STOCK" ||
-          (row?.stock !== undefined && row?.stock <= 0);
+        const variants = row?.variants || [];
+        const totalStock = variants.reduce(
+          (sum: number, v: any) => sum + (Number(v?.stock) || 0),
+          0,
+        );
+        const isOutOfStock = totalStock <= 0;
         return (
           <div className="flex flex-col">
             <span className="text-sm font-medium text-foreground">
-              {row?.stock ?? 0}
+              {totalStock}
             </span>
             <span
               className={`text-[10px] font-semibold uppercase tracking-wider ${
                 isOutOfStock ? "text-destructive" : "text-emerald-600"
               }`}>
-              {row?.stockStatus?.replace(/_/g, " ") ||
-                (row?.stock && row.stock > 0 ? "IN STOCK" : "OUT OF STOCK")}
+              {isOutOfStock ? "OUT OF STOCK" : "IN STOCK"}
             </span>
           </div>
         );

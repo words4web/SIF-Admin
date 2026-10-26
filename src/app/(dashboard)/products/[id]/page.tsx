@@ -166,23 +166,21 @@ export default function ProductDetailPage() {
 
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    Stock & Status
+                    Total Inventory
                   </span>
                   <div className="mt-1">
                     <p className="text-lg font-bold text-foreground">
-                      {product?.stock ?? 0}{" "}
+                      {Array.isArray(product?.variants)
+                        ? product.variants.reduce(
+                            (sum: number, v: any) =>
+                              sum + (Number(v?.stock) || 0),
+                            0,
+                          )
+                        : 0}{" "}
                       <span className="text-xs font-normal text-muted-foreground">
-                        units
+                        units across variants
                       </span>
                     </p>
-                    <span
-                      className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mt-0.5 ${
-                        product?.stockStatus === "OUT_OF_STOCK"
-                          ? "bg-destructive/10 text-destructive"
-                          : "bg-emerald-500/10 text-emerald-700"
-                      }`}>
-                      {product?.stockStatus?.replace(/_/g, " ") || "IN STOCK"}
-                    </span>
                   </div>
                 </div>
 
@@ -206,7 +204,8 @@ export default function ProductDetailPage() {
 
               <div className="pt-4 border-t border-border/40">
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-2">
-                  Weight & Price Variants ({product?.variants?.length || 0})
+                  Weight, Price & Stock Variants (
+                  {product?.variants?.length || 0})
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {Array.isArray(product?.variants) &&
@@ -214,13 +213,29 @@ export default function ProductDetailPage() {
                     product?.variants?.map((v: any, idx: number) => (
                       <div
                         key={idx}
-                        className="flex items-center justify-between p-3.5 rounded-xl border border-border/70 bg-muted/30">
-                        <span className="text-sm font-semibold text-foreground">
-                          {v?.weight}g
-                        </span>
-                        <span className="text-base font-black text-primary">
-                          €{Number(v?.price).toFixed(2)}
-                        </span>
+                        className="flex flex-col gap-1.5 p-3.5 rounded-xl border border-border/70 bg-muted/30">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-semibold text-foreground">
+                            {v?.weight}g
+                          </span>
+                          <span className="text-base font-black text-primary">
+                            €{Number(v?.price).toFixed(2)}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs pt-1 border-t border-border/40">
+                          <span className="text-muted-foreground font-medium">
+                            Stock:
+                          </span>
+                          <span
+                            className={`font-bold ${
+                              (v?.stock ?? 0) > 0
+                                ? "text-emerald-600"
+                                : "text-destructive"
+                            }`}>
+                            {v?.stock ?? 0}{" "}
+                            {(v?.stock ?? 0) === 1 ? "unit" : "units"}
+                          </span>
+                        </div>
                       </div>
                     ))
                   ) : (

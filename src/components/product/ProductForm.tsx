@@ -20,10 +20,6 @@ import {
   ProductFormProps,
   ProductFormValues,
 } from "@/types/product/product.types";
-import {
-  EStockStatus,
-  STOCK_STATUS_OPTIONS,
-} from "@/constants/product.constants";
 import { toSlug } from "@/lib/utils";
 import { CheckCircle2, AlertCircle, Languages } from "lucide-react";
 import { ProductLanguagePanel } from "./ProductLanguagePanel";
@@ -70,9 +66,7 @@ export function ProductForm({
     defaultValues: {
       slug: "",
       sku: "",
-      variants: [{ weight: 0, price: 0 }],
-      stock: 1,
-      stockStatus: EStockStatus.IN_STOCK,
+      variants: [{ weight: 0, price: 0, stock: 1 }],
       categoryId: "",
       keywords: [],
       images: [],
@@ -92,23 +86,6 @@ export function ProductForm({
     control,
     name: "variants",
   });
-
-  const currentStockStatus = watch("stockStatus");
-  const isOutOfStock = currentStockStatus === EStockStatus.OUT_OF_STOCK;
-
-  const handleStockStatusChange = async (newStatus: EStockStatus) => {
-    setValue("stockStatus", newStatus, { shouldDirty: true });
-    if (newStatus === EStockStatus.OUT_OF_STOCK) {
-      setValue("stock", 0, { shouldDirty: true });
-    } else if (newStatus === EStockStatus.IN_STOCK) {
-      const currentStock = getValues("stock");
-      if (typeof currentStock !== "number" || currentStock < 1) {
-        setValue("stock", 1, { shouldDirty: true });
-      }
-    }
-    clearErrors("stock");
-    await trigger(["stockStatus", "stock"]);
-  };
 
   useEffect(() => {
     onDirtyChange?.(isDirty);
@@ -388,12 +365,12 @@ export function ProductForm({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <p className="text-xs sm:text-sm text-muted-foreground">
-              Add all available weights in grams (g) and their respective
-              wholesale prices (at least 1 required).
+              Add all available weights in grams (g), wholesale prices, and
+              stock quantity (at least 1 required).
             </p>
             <button
               type="button"
-              onClick={() => appendVariant({ weight: 0, price: 0 })}
+              onClick={() => appendVariant({ weight: 0, price: 0, stock: 1 })}
               disabled={disabled}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors disabled:opacity-50 cursor-pointer">
               <Plus className="size-3.5" /> Add Weight
@@ -451,6 +428,28 @@ export function ProductForm({
                   />
                 </div>
 
+                <div className="flex-1 w-full sm:w-auto">
+                  <Input
+                    id={`variants.${index}.stock`}
+                    type="number"
+                    step="1"
+                    min={0}
+                    label={index === 0 ? "Stock Quantity *" : undefined}
+                    placeholder="0"
+                    className="h-11 text-sm pr-4"
+                    disabled={disabled}
+                    error={errors.variants?.[index]?.stock?.message}
+                    {...register(`variants.${index}.stock` as const, {
+                      required: "Stock is required",
+                      valueAsNumber: true,
+                      min: {
+                        value: 0,
+                        message: "Stock cannot be negative",
+                      },
+                    })}
+                  />
+                </div>
+
                 {variantFields?.length > 1 && (
                   <button
                     type="button"
@@ -472,56 +471,6 @@ export function ProductForm({
               {errors.variants.message}
             </p>
           )}
-        </div>
-      </FormSection>
-
-      <FormSection title="Inventory & Stock">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Input
-            id="stock"
-            type="number"
-            min={isOutOfStock ? 0 : 1}
-            step={1}
-            label={`Stock Quantity * ${isOutOfStock ? "(Disabled - Out of Stock)" : ""}`}
-            placeholder={isOutOfStock ? "0" : "1"}
-            className="h-12 text-base px-4 disabled:opacity-60 disabled:bg-muted/40"
-            disabled={disabled || isOutOfStock}
-            error={errors.stock?.message}
-            {...register("stock", {
-              required: "Stock quantity is required",
-              valueAsNumber: true,
-              validate: (val, formValues) => {
-                const outOfStock =
-                  formValues.stockStatus === EStockStatus.OUT_OF_STOCK;
-                if (outOfStock) {
-                  return val === 0 ? true : "Stock must be 0 when Out of Stock";
-                }
-                return typeof val === "number" && val >= 1
-                  ? true
-                  : "Stock must be at least 1 when In Stock";
-              },
-            })}
-          />
-
-          <Controller
-            name="stockStatus"
-            control={control}
-            rules={{ required: "Stock status is required" }}
-            render={({ field }) => (
-              <Select
-                id="stockStatus"
-                label="Stock Status *"
-                className="h-12 text-base px-4"
-                disabled={disabled}
-                error={errors.stockStatus?.message}
-                value={field.value || EStockStatus.IN_STOCK}
-                onChange={(e) =>
-                  handleStockStatusChange(e.target.value as EStockStatus)
-                }
-                options={STOCK_STATUS_OPTIONS}
-              />
-            )}
-          />
         </div>
       </FormSection>
 

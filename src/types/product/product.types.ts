@@ -6,6 +6,7 @@ import { LocalizedString } from "@/types/category/category.types";
 export interface ProductVariant {
   weight: number;
   price: number;
+  stock: number;
 }
 
 export interface RelatedProductItem {
@@ -24,8 +25,6 @@ export interface ProductRow {
   sku: string;
   description?: LocalizedString | null;
   variants: ProductVariant[];
-  stock: number;
-  stockStatus: EStockStatus;
   categoryId:
     | {
         _id: string;
@@ -46,8 +45,6 @@ export interface ProductPayload {
   sku: string;
   description?: LocalizedString | null;
   variants: ProductVariant[];
-  stock?: number;
-  stockStatus?: EStockStatus;
   categoryId: string;
   keywords: string[];
   images?: string[];
@@ -61,8 +58,6 @@ export interface ProductFormValues {
   sku: string;
   description?: LocalizedString;
   variants: ProductVariant[];
-  stock: number;
-  stockStatus: EStockStatus;
   categoryId: string;
   keywords: string[];
   images: string[];
